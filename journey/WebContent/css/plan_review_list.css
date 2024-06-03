@@ -1,0 +1,203 @@
+body {
+    margin: 0px;
+    font-size: 15px;
+	font-family: "Noto Sans KR", sans-serif;
+	background : url("https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Case_Study_Carousel-Filter_Variation?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1600&hei=786&qlt=100&fmt=png-alpha&fit=constrain");
+	background-size: cover;
+}
+
+input[type="button"], input[type="submit"]{
+	cursor : pointer;
+}
+header + div {
+	width: 1200px;
+	margin: 0px auto;
+    padding-top: 150px;
+    padding-bottom: 100px;
+}
+
+#no{
+	text-align : center;
+	width: 1200px;
+    margin: 140px auto;
+}
+
+section{
+	width : 1200px;
+	margin : 0 auto;
+}
+
+/* 검색구간 */
+#search_section{
+	width: 1200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #a994cf;;
+    margin-bottom: 50px;
+}
+
+#search_section div{
+	display: flex;
+	align-items: center;
+}
+
+/* 검색구간 - 콤보박스 */
+#search_section > div >select{
+	width: 150px;
+	height: 40px;
+	margin-right: 20px;
+	text-align: center;
+	border: none;
+}
+
+/* 검색구간 - 검색창 */
+#search_section input[name="searchBox"]{
+	width: 380px;
+    height: 40px;
+    float: left;
+    border: none;
+    margin-left: 20px;
+}
+
+#search>img{
+	width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: none;
+    border-left: 0;
+}
+
+/* 작성버튼 */
+#write_div> a >img{
+	width:40px;
+	height:40px; 
+	margin-left: 100px;
+}
+
+hr{
+	border: 0.1em solid #f1f1f3;
+    margin-bottom: 40px;
+}
+
+/* 게시글 목록div */
+div[id=list_div]{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: wrap;
+}
+
+/* 게시글 div */
+.review_div {
+    float: left;
+    width: 366px;
+    height: 520px;
+    padding-top: 10px;
+    margin-right: 50px;
+    margin-bottom: 40px;
+    box-shadow: 3px 3px 3px #CCCCCC;
+    background : white;
+}
+
+.review_div:nth-of-type(3n){
+	margin-right: 0px;
+}
+
+/* 게시글-프로필사진 */
+.review_div > a >img:first-of-type {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    margin-left : 20px;
+    margin-right: 10px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+/* 게시글-닉네임 */
+.review_div> a >p:first-of-type {
+    float: left;
+    width: 140px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/*  게시글-날짜 */
+.review_div> a> div:first-of-type {
+    float: right;
+    color: #CCCCCC;
+    font-size: 12px;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+
+/* 게시글-대표사진 */
+.review_div> a >img:last-of-type{
+    width: 366px;
+    height: 300;
+}
+
+/* 여행도시 */
+.nation_div{
+	float:left;
+	margin-left : 20px;
+	margin-top : 10px;
+}
+#icon{
+	width: 30px;
+    height: 30px;
+    object-fit: cover;
+    float: left;
+}
+
+.nation_div>p{
+	float: left;
+    width: 250px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #0D112D;
+}
+
+/* 게시글-타이틀 */
+.review_div>a>div:last-of-type{
+	float: left;
+    margin-left: 20px;
+    width: 310px;
+    font-size: 18px;
+}
+
+.review_div>a>div:last-of-type>p {
+	margin-block-end: 0;
+}
+
+/*  게시글-내용 */
+.review_div>a>p:last-of-type {
+   float: left;
+    margin-left: 20px;
+    width: 310px;
+    font-size: 13px;
+    overflow: hidden;
+   
+}
+
+#more_div{
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+#more_div > input[type='button']{
+	width: 200px;
+    height: 50px;
+    border: none;
+    background: #2a799c;;
+    color: white;
+    font-size: 15px;
+}

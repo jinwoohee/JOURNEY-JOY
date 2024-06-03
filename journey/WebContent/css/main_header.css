@@ -1,0 +1,219 @@
+@charset "UTF-8";
+
+body{
+	margin: 0;
+	font-family: "Noto Sans KR", sans-serif;
+	color: #646464;
+}
+
+div[id="top_div"]{ /* 헤더 전체 div*/
+	position: fixed;
+	width: 100%;
+	height: 80px;
+	margin: 0 auto;
+	background: white;
+	z-index: 60;
+}
+
+div[id="main_menu_div"]{ /* 헤더 메인메뉴(5개) div*/
+	width: 1200px;
+	height: 80px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+#logo{ /* 로고 */
+	position: fixed;
+	width: 140px;
+	height: 80px;
+	float: left;
+	margin-left: 140px;
+	object-fit : cover;
+}
+
+#main_menu_div ul{ /* 메인메뉴(5개) 리스트 */
+	display: flex;
+	padding-inline-start: 0;
+}
+
+#main_menu_div ul>li{
+	list-style-type: none;	
+	cursor: pointer;
+	margin-right : 100px;
+}
+
+#main_menu_div ul>li img{
+	width: 100px;
+	height: 20px;
+	object-fit : cover;
+}
+
+
+#main_menu_div ul>li:last-of-type{
+	margin-right: 0;
+}
+
+div[id="sub_div"]{ /* mouseover 시에 나오는 배경 전체 div*/
+	position: fixed;
+	top: 80px;
+	width: 100%;
+	height: 105px;
+	background-color: white;
+	display: none;
+	z-index: 80;
+}
+
+div[id="sub_menu_div"]{ /*서브메뉴 부분 div */
+	width: 1200px;
+	height: 105px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+
+#sub_menu_div ul{ /* 서브메뉴 리스트 */
+	display: block;
+	padding-inline-start: 0;
+	margin-right: 143px;
+}
+
+#sub_menu_div ul:last-of-type{
+	margin-right: 0;
+}
+
+#sub_menu_div ul>li{
+	list-style-type: none;
+	font-size: 13px;	
+	font-weight: bold;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+div[id="login"]{ /*아이디,회원가입,알림창,마이페이지 div*/
+	position: fixed;
+	width: fit-content;
+    height: 35px;
+    right: 140px;
+	top: 25px;
+	display: flex;
+    align-items: center;
+}
+
+.adiv { /* 알림창 div */
+	width: 33px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.alarm { /* 알림창 img */
+	width: 33px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+#mypage_btn{ /*마이페이지 버튼*/
+	float: right;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+div[id="mypage"]{ /*마이페이지 버튼 누르면 나오는 검정div*/
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #222222;
+	display: none;
+	z-index: 70;
+}
+ul[id="mypage_ul"]{ /*마이페이지 리스트 */
+	float: left;
+	margin-left: 360px;
+	margin-top: 140px;
+}
+
+#mypage_ul h2, #mypage_ul a {
+	color: #ffffff;
+}
+
+#mypage_ul label {
+	cursor: pointer;
+}
+
+li[class="mypage_li"]{/*마이페이지 리스트 */
+	list-style-type: none;
+	font-size: 26pt;
+	margin-bottom: 60px;
+}
+img[src*=close]{ /*마이페이지 닫는 x버튼 */
+	float: right;
+	margin-top: 45px;
+	margin-right: 170px;
+	cursor: pointer;
+}
+a{
+	text-decoration-line: none;
+	color: #646464;
+}
+a[class=sub_menu_a]{
+	color: #959595;
+	font-weight: 400;
+}
+
+/* 알림창 */
+.noticeBox {
+	position: absolute;
+    width: 350px;
+    height: 500px;
+    top: 55px;
+    right: 225px;
+    z-index: 900;
+    padding: 15px 15px 0 15px;
+    display: none;
+}
+
+.notice { 
+	border: 1px solid #6c94b8;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f3;
+    overflow-y: auto;
+    font-size: 15px;
+    font-weight: 600;;
+	
+}
+
+.noticeBox::before {
+	content: "";
+    display: block;
+    position: absolute;
+	top: 4px;
+    right: 106px;
+    background-image: url("../img/icon/sp_main3.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 13px;
+    z-index: 901;
+}
+
+.n_box { /* 알림창 내용div */
+	    border: 1px solid #ededf0;
+    border-radius: 10px;
+    padding: 20px 15px;
+    background-color: #fff;
+    text-align: justify;
+    margin: 10px 20px;
+}
+
+
+
+
+

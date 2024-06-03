@@ -1,0 +1,324 @@
+body {
+	font-family: "Noto Sans KR", sans-serif;
+	margin: 0;
+	color: rgb(64,64,64);
+	background: url("https://copilot.microsoft.com/rp/itdq0TGlsM-BDvSovDaQdrVxPbo.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+ 	isolation: isolate;
+}
+body::after {
+  content: '';
+  position: absolute;
+  background: white;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.7;
+}
+input{
+	font-family: "Noto Sans KR", sans-serif;
+	color: rgb(64,64,64);
+}
+p{
+	margin: 0;
+}
+a{
+	color : blue;
+}
+div[id="content"]{ /*헤더, 푸터를 제외한 섹션 전체 div*/
+	padding-top: 150px;
+	width: 1200px;
+	height: 1000px;
+	margin: 0 auto;
+	margin-bottom: 80px;
+}
+div[id="list_text"]{ /* "여행일정" 글자 div 와 아래의 선 */
+	width: 1200px;
+	height: 40px;
+}
+p[id="list_text"]{ /* "여행일정" 글자 */
+	float: left;
+    margin-top: 0px;
+    margin-left: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0D112D;
+}
+#main_content{
+	width: 1200px;
+    border: 1px solid #CCCCCC;
+    background-color: white;
+    overflow: auto;
+    margin: 0 auto;
+}
+div[id="day_div"]{ /* day1,day2,day3,day4... 들어갈div*/
+	width: 900px;
+	height: 50px;
+	margin-left: 232px;
+}
+p[id*="day"]{ /*day 글자 */
+	float : left;
+	font-size: 17px;
+	font-weight: bold;
+	margin-top : 14px;
+	cursor : pointer;
+	padding : 5px 20px;
+	border : none;
+}
+p[id="day1"]{ /*day 글자 */
+	border-top: 3px solid #6C94B8;
+    margin-top: 11px;
+    cursor: auto;
+    background-color: white;
+    color: #6C94B8;
+}
+div[id="thema_div"]{ /*내가 선택한 테마부분 전체 div(도시부터 수정하기 버튼까지)*/
+	width: 200px;
+	height: 300px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+#thema_div > img:first-of-type{
+	float: left;
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    margin-top: 12px;
+    margin-right: 5px;
+}
+
+#thema_div > hr{
+	float: left;
+    width: 180px;
+    margin-bottom: 40px;
+}
+
+div[id="detail_div"]{ /*화살표 누르면 사라지는 부분(선택한 테마~음식취향)div  */
+	width: 180px;
+}
+p[id="city"]{ /*목적지 도시 글자 */
+	font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: #0D112D;
+}
+p[id="thema"]{ /*여행테마 자체 글자 */
+	font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    color: #0D112D;
+}
+
+#detail_div div{
+	width: 170px;
+    border: 1px solid #6C94B8;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#detail_div div p{
+	font-size: 14px;
+    text-align: center;
+    color: #6C94B8;
+    font-weight: 600;
+}
+
+.button{ /*모든 버튼*/
+	background-color: white;
+	color: #6C94B8;
+	font-size: 15px;
+	font-family: "Noto Sans KR", sans-serif;
+	cursor: pointer;
+	border : none;
+}
+input[name="edit_thema"]{ /*테마 수정하기 버튼 */
+	width: 180px;
+    height: 45px;
+    margin-top: 45px;
+    background: #0D112D;
+    border: none;
+    color: white;
+}
+#up{ /*내가 선택한 테마 div 닫기 */
+	float:	right;
+	margin-top: -52px;
+	margin-right: 35px;
+	padding: 0px;
+	cursor: pointer;
+}
+#down{ /*내가 선택한 테마 div 열기 */
+	float:	right;
+	margin-top: -52px;
+	margin-right: 35px;
+	padding: 0px;
+	display: none;
+	cursor: pointer;
+}
+div[id="plan_list"]{ /* 장소검색,추가 화면 전체 div */
+	width: 970px;
+	float: left;
+	overflow: hidden;
+}
+div[id="search"]{ /*검색창 */
+	width: 280px;
+	height: 600px;
+	float: left;
+}
+input[name="search_place"]{/*검색*/
+	width: 236px;
+    height: 35px;
+    font-size: 15px;
+    border: none;
+    border-bottom: 2px solid #646464;
+    margin-top: 45px;
+    margin-left: 20px;
+    float: left;
+    outline : none;
+}
+button[name="search_btn"]{
+	width:20px;
+	height:20px;
+	background-color: white;
+	border : 0px solid white;
+	float:right;
+}
+img[id="search_btn"]{
+	width : 20px;
+	height:20px;
+	margin-top:59px;
+	float:right;
+	margin-right : -1px;
+	cursor : pointer;
+}
+div[id="result_list"]{
+	width : 280px;
+	height : 460px;
+	overflow : hidden auto;
+	
+}
+div[id="result_list"]::-webkit-scrollbar{
+	width: 10px;
+}
+div[id="result_list"]::-webkit-scrollbar-thumb {
+   background: #6C94B8;
+ }   
+div[id="result_list"]::-webkit-scrollbar-track-piece {
+   background: #f1f1f3;
+}
+input[name="place_one"]{
+	display: none;
+}
+label{
+	display: inline-block;
+    width: 240px;
+    height: 25px;
+    border-bottom: 1px solid #CCCCCC;
+    font-size: 15px;
+    padding: 15px;
+    cursor: pointer;
+}
+div[id="search_result"]{
+	width: 270px;
+    height: 550px;
+    border: 1px solid #CCCCCC;
+    margin-top: 10px;
+    margin-left: 20px;
+    float: left;
+}
+
+div[id="map"]{ /*지도 */
+	width: 645px;
+    height: 550px;
+    float: left;
+    margin-top: 94px;
+    margin-left: 25px;
+    border: 1px solid #CCCCCC;
+}
+div[id="infowindow-content"]{
+	width: 685px;
+	height: 600px;
+}
+.my_place{
+	font-size: 20px;
+    margin-bottom: 15px;
+    color: #0D112D;
+    font-weight: bold;
+}
+div[id*="places"]{ /*추가되어있는 여행지 */
+	width: 1000px;
+    min-height: 110px;
+    margin-top: 10px;
+    border-bottom: 2px solid #0D112D;
+    border-top: 2px solid #0D112D;
+    float: left;
+    display: none;
+    padding-top: 10px;
+    padding-left: 10px;
+    overflow: auto;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+div[id="places1"]{
+	display : block;
+}
+p[id*="places_text"]{
+	font-size : 17px;
+	width : 930px;
+}
+input[id*="plan_add"]{ /*여행지 추가 버튼 */
+	width: 240px;
+    height: 40px;
+    margin-top: 30px;
+    margin-left: 6%;
+    background: #2a799c;
+    color: white;
+	display : none;
+}
+input[id="plan_add1"]{ /*여행지 추가 버튼 */
+	display : block;
+}
+input[name*="save_plan"]{ /*저장 버튼 */
+	margin-left: 42%;
+    width: 180px;
+    height: 45px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    cursor: pointer;
+    background: #2a799c;
+    color: white;
+}
+
+div[id="side_menu"]{ /*사이드 메뉴 div*/
+	position: fixed;
+    width: 120px;
+    height: 95px;
+    top: 200px;
+    right: 210px;
+    border: 1px solid #2a799c;
+    background-color: white;
+    box-shadow: 3px 3px 10px #CCCCCC;
+}
+#side_menu_p{ /*side menu 글자 */
+	margin: 3px 0;	
+	font-weight: bold;
+	color : #2a799c;
+}
+
+input[name="plan_sel"]{ /*뒤로가기 버튼 */
+	width: 100px;
+    height: 35px;
+    margin-left: 10px;
+    margin-top: 19px;
+    background: #2a799c;
+    cursor: pointer;
+    font-size: 12px;
+    border: none;
+    color : white;
+}
+footer {
+	margin-top: -30px;
+}

@@ -1,0 +1,499 @@
+body{
+	margin: 0; 
+	font-family: "Noto Sans KR", sans-serif;
+	monospace; font-size: 15px;
+	color: #646464;
+	overflow-x: hidden;
+}
+
+header>iframe {
+	position: fixed;
+	z-index: 100;
+}
+
+#top_section{
+	width: 1200px; 
+	margin: 0px auto;
+	padding-top: 200px;
+}
+
+/* 메인이미지, 타이틀 정보있는 div */
+#top_section > div{
+	width: 600px; 
+	height: 400px; 
+	float: left;
+}
+
+/* 메인이미지*/
+#mainImg > img{
+	width: 600px;
+	height: 400px;
+	object-fit: cover;
+}
+
+/* 메인정보 */
+#mainInfo >div{
+	margin-left: 20px; 
+	float: left;
+}
+
+#mainInfo p{
+	font-size: 30px;
+    line-height: 135%;
+    color: #646464;
+    margin-top: 10px;
+}
+
+#mainInfo > hr{
+	width: 580px;
+	margin-left: 20px;
+	border: 1px solid #646464;
+}
+
+/* 태그 */
+#mainInfo > hr+div div{
+	width: 125px;
+	height: 30px;
+	border: 1px solid #6C94B8;
+	border-radius: 20px;
+	box-shadow: 3px 3px 7px #CCCCCC;
+	float: left;
+	margin-top: 30px;
+	margin-right: 10px;
+	color: #6C94B8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.title{
+	word-break : break-all;
+	height: 80px;
+}
+
+/* 닉네임 */
+#guide{display: flex; margin-top: 80px;}
+
+#profile{
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	border-radius: 50%;
+	float: left;
+}
+
+#profile + p{
+	font-size: 16px;
+	color: #646464;
+	padding-left: 10px;
+	width: 250px;
+	float: left;
+	margin-top: 14px;
+}
+
+/* 찜하기, 공유하기 이미지 */
+#icon{
+	display: flex; 
+	align-items: center;
+	padding-left:190px;
+}
+
+#icon img{
+	width: 30px;
+	height: 30px;
+	margin-left: 10px;
+}
+
+/* 문의하기 버튼 */
+input[name='inquiry']{
+	width: 580px;
+	height: 50px;
+	background: #6C94B8;
+	border: none;
+	box-shadow: 3px 3px 7px #CCCCCC;
+	color: white;
+	font-weight: bold;
+	margin-top: 28px;
+}
+
+/* 메인페이지 */
+#main_section {width: 1200px; margin: 0 auto;}
+
+#main_section article:first-of-type{width: 930px; float: left; margin-top:50px; border-right: 0.7px solid #cccccc;}
+#main_section article:last-of-type{width: 1200px; float: left;}
+
+/* 타이틀 */
+article > div > p{font-size: 20px; font-weight: bold;}
+
+article > div> div{display: flex;}
+
+/* 일정*/
+#main_section article > div:first-of-type>div>div:first-of-type{font-weight: bold; margin-right: 20px;}
+
+/* 일정상세*/
+
+article > hr{ border: 0.7px solid #cccccc; margin-top: 50px; margin-bottom: 70px; width: 880px; margin-left: 0}
+
+/* 상품가격 테이블 */
+tr, td{border-right: 0.1em solid #f1f1f3; padding: 15px;}
+
+tr:first-of-type >td{background: #6C94B8; color: #f1f1f3; font-size: 15px; font-weight: bold;}
+
+tr:first-of-type >td>p{
+	font-size: 12px;
+	font-weight: normal;
+	color: #f1f1f3;
+	margin-top: 8px;
+}
+
+table{
+  	font-size: .9em;
+    box-shadow: 3px 3px 7px #CCCCCC;
+    width: 880px;
+    border-collapse: collapse;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* 인원선택(aside) */
+aside > div{
+	width: 240px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 50px;
+}
+
+aside > div > p{font-size: 20px; font-weight: bold; padding-left: 10px;}
+
+aside>div>form>div{padding-left: 10px; display: flex;}
+
+aside>div>form>div>div>p:first-of-type{font-size: 12px; color: #6c6c6c; margin-bottom: -12px}
+aside>div>form>div>div>p:last-of-type{font-size: 15px; font-weight: bold;}
+
+aside>div>form>div>div:first-of-type{width: 120px;}
+aside>div>form>div>div:last-of-type{margin-top: 18px;}
+
+/* 인원선택버튼 */
+aside input[type=button]{
+	float: left; 
+	width: 30px;
+	height: 30px; 
+	background: #f1f1f3; 
+	border: 0.5px solid #f1f1f3;
+	box-shadow: 3px 3px 7px #CCCCCC;
+}
+
+/* 총금액 */
+aside>div>form>div>p:first-of-type{
+	display: flex;
+	align-items: center;
+	width: 60px;
+}
+
+aside input[type=text]{
+	width: 45px;
+    height: 28px;
+    text-align: center;
+    background: white;
+    border: none;
+    box-shadow: 3px 3px 7px #CCCCCC;
+    float: left;
+}
+
+aside>div>form>div>p:last-of-type{
+	width: 172px;
+    font-size: 20px;
+    color: #6C94B8;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* 참여하기 버튼 */
+aside input[name='join']{
+	margin-left: 10px;
+	width: 230px;
+	height: 50px;
+	background: white;
+	border: 1px solid #6C94B8;
+	color: #6C94B8;
+	font-weight: bold;
+}
+
+/* 참여마감 버튼 */
+aside input[name='end']{
+	margin-left: 10px;
+	width: 230px;
+	height: 50px;
+	background: #CCCCCC;
+	border: none;
+	color: white;
+	font-weight: bold;
+}
+
+/* 참여마감 버튼 */
+aside input[name='cancel']{
+	margin-left: 10px;
+	width: 230px;
+	height: 50px;
+	background: #0D112D;
+	border: none;
+	color: white;
+	font-weight: bold;
+}
+
+
+/* 일정안내 */
+#main_section > article > div:last-of-type >div{margin-bottom: 20px;}
+.day{
+	width: 200px;
+	background: #6C94B8;
+	border: none;
+	color: white;
+	text-align: center;
+	align-items: center;
+}
+
+.day>p:first-of-type{
+	font-size: 20px;
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+
+.day_title{
+	width: 680px;
+	border: 1px solid #6C94B8;
+	margin-left: 0;
+	font-size: 20px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.day_title > p{
+	width: 580px;
+}
+
+.day_title > img{
+	width: 20px;
+    height: 20px;
+    padding-left: 40px;
+}
+
+.day_title > img[src*="down"]{
+	display: none;
+}
+
+/* 일정안내 - 상세보기 */
+div[class *= day_detail]{width: 880px; border: 1px solid #CCCCCC; display: none;}
+
+.place_detail div{
+	margin-left: 20px;
+	display : flex;
+}
+
+.place_detail > div:first-of-type{
+	width: 880px;
+	display: flex;
+    align-items: center;
+}
+
+/* 장소이름 */
+.place_name{
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 0;
+	float: left;
+	color : #0D112D;
+}
+
+/* 주소 */
+.place_addr{
+	color : #CCCCCC;
+	font-size: 15px;
+	border-left: 2px solid #CCCCCC;
+	padding-left: 10px;
+}
+
+.place_detail hr{
+	width: 840px;
+	margin-bottom : 20px;
+	margin-left: 20px;
+}
+
+/* 장소정보 */
+.place_explan{
+	width : 840px;
+	line-height : 2;
+	font-size : 18px;
+	margin-bottom: 80px;
+}
+
+/* 대표사진 */
+.place_detail img{
+	width: 520px;
+    height: 400px;
+    object-fit: cover;
+}
+
+
+/* 일정내용 */
+.contents{width:840px; margin-left: 20px; margin-top: 80px;}
+
+.contents > div:first-of-type > p{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.contents > div:nth-of-type(2) > p{
+	width : 840px;
+	line-height : 2;
+	font-size : 15px;
+	margin-bottom: 50px;
+}
+
+.contents > div:nth-of-type(3) > p{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.contents > div:last-of-type > p{
+	width : 840px;
+	line-height : 2;
+	font-size : 15px;
+	margin-bottom: 50px;
+}
+
+/* 여행시 유의사항 */
+#main_section > article:last-of-type >div:first-of-type{
+	border-top: 1px solid #CCCCCC;
+	padding-top: 20px;
+}
+
+#main_section > article:last-of-type >div:first-of-type>div{
+	display: grid;
+    line-height: 20px;
+}
+
+article:last-of-type > hr{ border: 0.7px solid #cccccc; margin-top: 50px; margin-bottom: 70px; width: 100%;}
+
+/* 댓글 */
+#main_section > article:last-of-type >div:last-of-type{
+	width: 1200px;
+	height: 400px;
+	margin: 120px auto;
+	background: #f1f1f3;
+	position: relative;
+}
+
+/* 댓글 */
+#reply{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	display: grid;
+}
+
+#profile+p+div{
+	float: left;
+	width: 760px;
+}
+
+#reply > div > div:last-of-type{
+	float: right;
+	margin-left: 160px;
+}
+
+/* 댓글창 */
+#comment{
+	position: absolute;
+	bottom: 20px;
+	left: 10px;
+}
+
+input[name='comment_txt']{
+	width: 1045px;
+    height: 40px;
+    border: 1px solid #CCCCCC;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+input[name='register']{
+	width: 80px;
+	height: 45px;
+	background: #6C94B8;
+	border: none;
+	color: white;
+	font-weight: bold;
+}
+
+/* 문의하기 */
+#inquiryDiv{
+    width: 560px;
+    height: 320px;
+    position: absolute;
+    margin: auto;
+    left: 52%;
+    top: 65%;
+    background: white;
+    border: 1px solid #6C94B8;
+    box-shadow: 3px 3px 7px #CCCCCC;
+    display : none;
+}
+
+#inquiryDiv > p{
+	font-size: 18px;
+    margin-left: 43px;
+}
+
+#inquiryDiv div{
+	display: flex;
+    justify-content: center;
+}
+
+#inquiryDiv > form > div > textarea{
+	width: 450px;
+    height: 150px;
+    resize : none;
+    padding: 10px 10px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.inquiry_btn {
+	width: 473px;
+    height: 40px;
+    margin-top: 20px;
+    background : #0D112D;
+    border : none;
+    color : white;
+    font-weight : bold;
+}
+
+/* 댓글 > 프로필*/
+#comm_profile> img{
+	width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    float: left;
+}
+
+#comm_profile>p{
+	font-size: 16px;
+    color: #646464;
+    padding-left: 10px;
+    width: 100px;
+    float: left;
+    margin-top: 7px;
+}
+
+#comm_contents>p{
+	margin-top : 10px;
+}
+
+#comm_date>p{
+	margin-top : 7px;
+}
+
+

@@ -1,0 +1,508 @@
+@charset "UTF-8";
+
+body{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: #646464;
+	font-family: "Noto Sans KR", sans-serif;
+	overflow-x: hidden;
+}
+
+/* 여행계획 */
+#plan{
+	width: 100%;
+	height: 953px;
+	background:url("../img/travel/main2.jpg");
+	background-size: cover;
+	position: relative;
+}
+
+/* 이미지 위에 검은색 div */
+#plan>div:first-child{
+	width: 450px;
+    height: 600px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#plan>div:last-child{
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+input[type=text]{
+	width: 336px;
+    height: 50px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+}
+
+/*출발지 div*/
+#departure_div_in{
+	width: 350px;
+	height : 85px;
+    background: #6C94B8;
+    opacity: 0.9;
+    position: absolute;
+    top: 145px;
+    display: none;
+}
+
+#departure_table{
+	margin: 0 auto;
+	color: white;
+	font-size: 13px;
+}
+
+#departure_table td{
+	width: 70px;
+	height : 40px;
+	text-align: center;
+}
+
+/*여행지 div*/
+#nation_div_in{
+	width: 350px;
+	height : 85px;
+    background: #6C94B8;
+    opacity: 0.9;
+    position: absolute;
+    top: 58px;
+    display: none;
+}
+
+#nation_table{
+	margin: 0 auto;
+	color: white;
+	font-size: 13px;
+}
+
+#nation_table td{
+	width: 70px;
+	height : 40px;
+	text-align: center;
+}
+
+/* 견적내기 버튼 */
+input[type="button"]{
+	width: 350px;
+    height: 50px;
+    background: #6C94B8;
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    margin-top: 40px;
+    border: none;
+}
+
+/* --------------------------------------------------------------- */
+
+/* 패키지여행 */
+#package{
+	width: 100%;
+	height: 919px;
+	}
+
+/* 이미지 */
+#package>img{
+	width: 40%;
+	height: 919px;
+	object-fit: cover;
+	position: absolute;
+}
+
+/* 불투명 div */
+#package>img+div{
+	width: 40%;
+	height: 919px;
+	background: rgba(0,0,0,0);
+	position: relative;
+}
+
+/* 문구 div*/
+#package>div:nth-child(3){
+	width: 500px;
+    position: relative;
+    bottom: 260px;
+    right: -150px;
+}
+
+/* 문구 */
+#package>div:nth-child(3)>p{
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: -30px;
+	color: white;
+	margin-left : 30px;
+}
+
+#package>div>p:last-of-type{
+	height: 55px;
+	border-bottom: 0.02em solid #F8F8F8;
+}
+
+/* 바로가기 버튼 */
+#package>input[type="button"]{
+	width: 150px;
+    height: 45px;
+    position: relative;
+    bottom: 250px;
+    right: -500px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+}
+
+#package>div:last-child{
+    width: 60%;
+    height: 919px;
+    position: relative;
+    float: right;
+    bottom: 110%;
+}
+
+#package>div:last-child>div>img{
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#package>div:last-child>div>p{
+	width: 500px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #0D112D;
+	border-bottom: none;
+	margin-left : 50px;
+}
+
+
+/*국가별 안전정보*/
+#package>div:last-child>div>div{
+	width: 1030px; 
+	margin : 0 auto;
+}
+
+/*header*/
+#header{
+	text-align : center;
+	display : flex;
+	align-items: center;
+	background : #0D112D;
+	color : white;
+	height : 30px;
+}
+
+#header div{
+	margin : 0 auto;
+}
+
+/*국가*/
+#header div:first-of-type{
+	width : 115px;
+}
+
+/*제목*/
+#header div:nth-of-type(2){
+	width : 500px;
+}
+
+/*내용*/
+#header div:nth-of-type(3){
+	width : 315px;
+}
+
+/*작성날짜*/
+#header div:nth-of-type(4){
+	width : 130px;
+}
+
+
+/*body*/
+#body_contents{ 
+	height : 300px;
+	overflow-y : scroll;
+	text-align : center;
+	margin : 0 auto;
+	box-shadow: 3px 3px 10px #CCCCCC;
+	font-size : 13px;
+}
+
+/*스크롤바*/
+#body_contents::-webkit-scrollbar {
+    width: 15px;
+}
+
+#body_contents::-webkit-scrollbar-thumb {
+    background-color: #6C94B8;
+}
+#body_contents::-webkit-scrollbar-track {
+    background-color: #f1f1f3;
+  }
+
+#contents_tb{
+	margin : 10px auto;
+	border-collapse: collapse;
+	font-family: "Noto Sans KR", sans-serif;
+}
+
+#contents_tb tr{
+	border-bottom : 1px solid #CCCCCC;
+}
+
+/*국가*/
+.tb_nation{
+	width : 110px;
+	height : 40px;
+	font-weight : bold;
+	color : #0D112D;
+}
+
+/*제목*/
+.tb_title{
+	width: 500px;
+    text-align: left;
+}
+
+/*내용*/
+.tb_content{
+	width: 340px;
+    text-align: left;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+
+/*작성날짜*/
+.tb_wrtDt{
+	width : 100px;
+	font-size : 13px;
+	color : #CCCCCC;
+}
+
+
+/*차트1*/
+#chart_div1{
+}
+
+#chart_div1>img{
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	margin-top: 50px;
+	float: left;
+}
+
+#chart_div1 >p{
+	float: left;
+    font-size: 25px;
+    font-weight: bold;
+    color: #0D112D;
+    border-bottom: none;
+    display: inline;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+
+/* --------------------------------------------------------------- */
+
+/* 여행톡 */
+#talk{
+	width: 100%;
+	height: 730px;
+}
+
+#talk>div:nth-child(3){
+    width: 40%;
+    height: 730px;
+}
+
+/* 아이콘 */
+#chart_div2>div{
+	padding-top: 10px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+   	margin-bottom: -20px;
+}
+#chart_div2>div>img{
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+}
+
+/* 문구 */
+#chart_div2>div>p{
+    font-size: 25px;
+    font-weight: bold;
+    color: #0D112D;
+    border-bottom: none;
+    display: inline;
+    margin-left: 10px;
+}
+
+/* 통계 */
+#chart_div2>div:nth-of-type(2){
+	width : 55%;
+	height : 540px;
+	margin : 0 auto;
+}
+
+/* 이미지 */
+#talk>img{
+	width: 60%;
+	height: 730px;
+	object-fit: cover;
+	position: absolute;
+	right: 0;
+}
+
+/* 이미지 위에 검은색div */
+#talk>img+div{
+	width: 60%;
+	height: 730px;
+	/* background: rgba(0,0,0,0.1); */
+	position: absolute;
+	right: 0;
+}
+
+/* 문구 div*/
+#talk>div:nth-child(4){
+    position: absolute;
+    right: 520px;
+    top: 2350px;
+}
+
+/* 문구 */
+#talk>div:nth-child(4)>p{
+	width: 500px;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: -30px;
+	color: white;
+}
+#talk>div:nth-child(4)>p:last-of-type{
+	height: 55px;
+	border-bottom: 0.02em solid #F8F8F8;
+}
+
+/* 바로가기 버튼 */
+#talk>div>input[type="button"]{
+	width: 150px;
+    height: 45px;
+    position: relative;
+    background: rgba(0,0,0,0.6);
+    color: white;
+}
+
+/* --------------------------------------------------------------- */
+/* 리뷰 */
+#review{
+	width: 100%;
+    height: 919px;
+    background: #12427f;
+}
+
+#review>div:first-child{
+	width: 100%;
+	height: 919px;
+	position: relative;
+    display: flex;
+    justify-content: space-around;
+    bottom: 180px;
+}
+
+#review>div img{
+	width: 45%;
+	height: 700px;
+	object-fit: cover;
+	box-shadow: 10px 10px 30px #0D112D;
+	position: relative;
+}
+
+/* 바로가기 버튼 */
+input[name="rvBtn1"]{
+	width: 150px;
+    height: 45px;
+    position: relative;
+    right: 935px;
+    top: 235px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+}
+
+input[name="rvBtn2"]{
+	width: 150px;
+    height: 45px;
+    position: relative;
+    right: 660px;
+    top: 235px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+}
+
+
+/* --------------------------------------------------------------- */
+
+/* 워킹홀리데이 */
+#working_holiday{
+	width: 100%;
+	height: 953px;
+	margin: 0;
+	overflow: hidden;
+}
+#working_holiday>img{
+	width: 100%;
+	height: 953px; 
+	object-fit: cover;
+	position: absolute;
+}
+
+#working_holiday>img+div{
+	width: 100%;
+	height: 953px;
+	background: rgba(0,0,0,0.1);
+	position: relative;
+}
+
+#working_holiday>div:last-of-type{
+    position: relative;
+    top: -250px;
+    left: 90px;
+}
+
+#working_holiday>div:last-of-type>p{
+	width: 370px;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: -30px;
+	padding-bottom: 10px;
+	color: white;
+	border-bottom: 0.02em solid #F8F8F8;
+}
+
+input[name="whBtn"]{
+	width: 150px;
+    height: 45px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    bottom: 250px;
+    left: 310px;
+}

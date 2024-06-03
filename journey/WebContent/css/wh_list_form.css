@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+body {
+    margin: 0px;
+	font-family: "Noto Sans KR", sans-serif;
+	color: #646464;
+}
+
+/* 검색리스트 */
+.wrap_form > div {
+	width: 368px;
+    border: 1px groove #2c609c;
+    border-radius: 10px;
+    margin-bottom: 50px;
+	float: left;
+    margin-right: 15px;
+    margin-left: 15px;
+    background-color: white;
+}
+
+.wrap_form div:hover {
+	/* box-shadow: 3px 3px 3px #9BBBD7; */
+	box-shadow: 0px 4px 24px 0px #9BBBD7; 
+}
+
+.wrap_form ul {
+	list-style: none;
+	padding-inline-start: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.wrap_form hr {
+	border: 1px groove #cccccc;
+}
+
+.com_title { /* 공고제목 */
+	color: black;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 0px;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.com_name { /* 회사명 */
+	font-size: 14px;
+	margin-top: 0px;
+}
+
+.com_country { /* 나라,도시 */
+	font-size: 14px;
+	margin-top: 3px;
+    margin-bottom: 0px;
+}
+
+.com_job { /* 필터 */
+	font-size: 14px;
+	margin-top: 3px;
+    margin-bottom: 0px;
+}
+
+.com_wtime { /* 근무시간 */
+	font-size: 14px;
+	margin-top: 3px;
+    margin-bottom: 0px;
+}
+
+.com_sal { /* 급여 */
+	color: black;
+	font-size: 14px;
+	margin-top: 3px;
+    margin-bottom: 0px;
+}
+
+.com_etime { /* 마감날짜 */
+	color: #cccccc;
+	font-size: 14px;
+	float: right;
+	margin-top: 0px;
+}

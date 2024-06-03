@@ -1,0 +1,79 @@
+@charset "UTF-8";
+body{
+	margin: 0;
+	font-family: "Noto Sans KR", sans-serif;
+	color: #646464;
+	font-size: 15px;
+	background : url("https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Case_Study_Carousel-Filter_Variation?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1600&hei=786&qlt=100&fmt=png-alpha&fit=constrain");
+	background-size: cover;
+}
+*{
+	margin: 0;
+}
+
+/* 메뉴바 */
+section{
+	width : 1200px;
+	margin : 0 auto;
+	padding-top : 170px; 
+	padding-bottom: 210px;
+}
+div[id="content"]{ /*헤더, 푸터를 제외한 섹션 전체 div*/
+	width: 1000px;
+    border: 1px solid #cccccc;
+    padding: 50px 50px;
+    box-shadow: 3px 3px 10px #cccccc;
+    margin: 0 auto;
+    background: white;
+}
+
+.depart_div{
+	width: 150px;
+    height: 40px;
+    background: #6C94B8;
+    color : white;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 79px;
+}
+
+.plan_div{
+	width: 820px;
+    height: 75px;
+    border: 1px solid #6C94B8;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.plan_div > a >div:fitst-of-type{
+	float : left;
+}
+
+.plan_div > a > div:first-of-type > img{
+	width : 40px;
+	height: 40px;
+	float : left;
+}
+.plan_div > a > div:first-of-type > p{
+	float: left;
+    font-size: 20px;
+    color: #0D112D;
+    margin-left: 10px;
+    padding-top: 4px;
+    font-weight: bold;
+    width: 80%;
+}
+
+.plan_div > a > div:nth-of-type(2){
+    float: left;
+    margin-top: 8px;
+    margin-left: 5px;
+    border: none;
+    background: #0D112D;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 30px;
+}

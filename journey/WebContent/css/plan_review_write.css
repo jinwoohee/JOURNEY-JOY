@@ -1,0 +1,299 @@
+body {
+	font-family: "Noto Sans KR", sans-serif;
+	margin: 0;
+	color: #646464;
+	background : url("https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Case_Study_Carousel-Filter_Variation?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1600&hei=786&qlt=100&fmt=png-alpha&fit=constrain");
+	background-size: cover;
+}
+
+input[type="button"], input[type="submit"]{
+	cursor : pointer;
+}
+
+input[type="button"], input[type="submit"]{
+	cursor : pointer;
+}
+section{ /*섹션 전체 div*/
+	width: 1200px;
+	margin: 0 auto;
+	padding-top: 200px;
+	padding-bottom: 210px;
+}
+div[id="main_div"] {
+    width: 900px;
+    background: white;
+    margin: 0 auto;
+    box-shadow: 3px 3px 3px #cccccc	;
+    border: 1px solid #cccccc;
+    padding: 20px;
+}
+textarea{
+	padding:10px 10px;
+}
+input[name="title"]{
+	width: 780px;
+    height: 40px;
+    font-size: 20px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 30px;
+    padding-left: 20px;
+    border: none;
+    border-left: 7px solid #0D112D;
+}
+textarea[name="content"]{
+	width: 770px;
+	height: 150px;
+	float: left;
+	border: 1px solid #cccccc;
+	resize: none;
+	margin : 30px 50px;
+	font-size: 15px;
+}
+div[id*="day_review"]{
+	width: 790px;
+    height: 100px;
+    float: left;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+textarea[name*="day_review"]{
+	width: 690px;
+    height: 70px;
+    display: flex;
+    align-content: center;
+    border: aliceblue;
+    resize: none;
+    font-size: 15px;
+    margin-left: 40px;
+}
+#empty{
+	width: 800px;
+	height: 10px;
+}
+hr{
+	width:790px;
+	border-top: 1px solid #f1f1f3;
+	margin : 20px 50px; 
+}
+div[class="day_plan"]{ /*날짜별 일정 div*/
+	width: 800px;
+	height : 170px;
+}
+div[class="day_info"]{
+	width: 790px;
+    height: 120px;
+    margin-left: 52px;
+    float: left;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid #CCCCCC;
+    margin-top: 30px;
+}
+.day{
+	font-size: 18px;
+	float: left;
+	margin-left : 40px;
+	margin-top : 17px;
+	font-weight: bold;
+}
+img[class="day_write"]{
+	width : 25px;
+	height : 25px;
+	float : left;
+	margin-top: 19px;
+    margin-left: 20px;
+}
+p[class="place_info"]{
+	font-size: 15px;
+    width: 600px;
+    color: white;
+    background: #6C94B8;
+    border-radius: 30px;
+    padding: 5px 20px;
+    margin-top: 60px;
+    margin-left: 37px;
+}
+img[id*="down"]{
+	width : 25px;
+	height : 25px;
+	float : right;
+	margin-right : 40px;
+	margin-top :-65px; 
+	cursor : pointer;
+}
+img[id*="up"]{
+	width: 25px;
+    height: 25px;
+    float: right;
+    margin-right: 40px;
+    margin-top: -65px;
+    display: none;
+    cursor: pointer;
+}
+img[id="down1"]{
+	display:none;
+}
+img[id="up1"]{
+	display:block;
+}
+
+div[id*="pl_eat_div"]{
+   width: 795px;
+    float: left;
+    margin-top: 10px;
+    border-bottom: 1px solid #646464;
+    margin-left: 50px;
+    display: none;
+    background: #f6f6f6;
+}
+div[id="pl_eat_div1"]{
+    width: 795px;
+    float: left;
+    margin-top: 10px;
+    border-bottom: 1px solid #646464;
+    margin-left: 50px;
+    display: block;
+    background: #f1f1f3;
+}
+.no{
+	float: left;
+    background: #0D112D;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 40px;
+    margin-right: 20px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+}
+input[name="place"]{
+	width: 500px;
+	height: 40px;
+	font-size: 15px;
+	border: 0px solid white;
+	float : left;
+	margin-top:6px;
+}
+img[class="place_write"]{
+	width : 25px;
+	height : 25px;
+	float : right;
+	margin-top : -40px;
+	margin-right : 43px;
+}
+div[id="save_div"]{
+	width:900px;
+	height:100px;
+	margin-top : 560px
+}
+input[type="submit"]{
+	width: 230px;
+    height: 50px;
+    float: right;
+    margin-right: 210px;
+    border: none;
+    background: #0D112D;
+    color: #f1f1f3;
+    font-weight: bold;
+}
+input[name="cancel"]{
+	width : 230px;
+	height : 50px;
+	float: left;
+	margin-left : 210px;
+	border : none;
+	color : white;
+	font-weight: bold;
+	background: #CCCCCC;
+}
+
+/* 첨부파일 */
+#file_txt{
+	width : 150px;
+	height: 30px;
+	background : #0D112D;
+	margin-left : 54px;
+	color : white;
+	border-radius : 5px 5px 0 0;
+}
+
+#file_txt > p{
+	text-align : center;
+}
+
+#file{
+	margin: 0 auto;
+    display: flex;
+    width: 790px;
+    height: 190px;
+    border: 1px solid #cccccc;
+    border-radius: 0 0 5px 5px;
+}
+
+#file > div{
+	margin : 0 auto;
+	display: flex;
+    align-items: center;
+}
+
+div[id*=thumnail]{
+	width: 150px;
+	height: 150px;
+	background: #f1f1f3;
+	margin-right: 30px;
+}
+
+input[type=file]{
+	display: none;
+}
+
+/* 추가버튼 */
+input[name *=upload_btn]{
+	width: 40px;
+    height: 40px;
+    font-size: 30px;
+    color: #CCCCCC;
+    margin-top: 58px;
+    border: none;
+    margin-left: 55px;
+}
+
+/* 삭제버튼 */
+input[name *=del_btn]{
+	width: 20px;
+    height: 20px;
+    background: #FF2424;
+    color: white;
+    border: none;
+    position: absolute;
+    margin-left: 132px;
+    margin-top: -157px;
+    display : none;
+}
+
+#thumnail3{
+	margin-right: 0;
+}
+
+/* 썸네일 추가시 미리보기 이미지 */
+div[id *= preview] img{
+	width: 150px;
+	height : 150px;
+	overflow: hidden;
+	object-fit : cover;
+	border-radius: 10px;
+	background : white;
+	border : 1px solid #CCCCCC;
+}
+
+#preview{
+	width: 150px;
+	height: 150px;
+	object-fit : cover;
+	overflow: hidden;
+	border-radius: 10px;
+}

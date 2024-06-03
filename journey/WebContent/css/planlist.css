@@ -1,0 +1,196 @@
+body {
+	font-family: "Noto Sans KR", sans-serif;
+	margin: 0;
+	color: rgb(64,64,64);
+}
+*{
+	margin: 0;
+}
+
+/* 메뉴바 */
+#top_img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    position: absolute;
+    z-index : 1;
+}
+div[id="list_text"]{ /* "여행계획서" 글자 div 와 아래의 선 */
+	width: 1200px;
+    height: 80px;
+    margin: 0px auto;
+    padding-top: 220px;
+}
+p[id="list_text"]{ /* "여행계획서" 글자 */
+	float: left;
+	font-size: 30px;
+	font-weight: bold;
+	position : relative;
+	z-index : 5;
+	color : #f1f1f3
+}
+div[id="content"]{ /*헤더, 푸터를 제외한 섹션 전체 div*/
+	width: 1205px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    overflow: auto;
+}
+div[id="filter"]{ /*계획서 필터 div*/
+	float:left;
+	width: 1200px;
+	height: 100px;
+	margin: 0 auto;
+	border : 1px solid #6C94B8;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #CCCCCC;
+}
+
+select{ /*필터 */
+	font-family: "Noto Sans KR", sans-serif;	
+	height: 30px;
+	margin-right: 15px;
+	font-weight: bold;
+	margin-top: 30px;
+	text-align: center;
+	color : gray;
+	border: none;
+	border-bottom : 2px solid gray;
+	outline :none;
+	width : 105px;
+}
+option{
+	font-family: "Noto Sans KR", sans-serif;
+	color : gray;
+	font-size : 13px;
+}
+select[name*="city"]{
+	display :none;
+}
+select[name="city_sel"]{
+	display : inline-block;
+}
+#filter select:first-of-type{
+	margin-left: 100px;	
+}
+.button{ /*모든 버튼*/
+	background-color: white;
+	color: #6C94B8;
+	border: 0.7px solid #6C94B8;
+	font-size: 15px;
+	font-family: "Noto Sans KR", sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+}
+div[id="plan_list"]{ /*계획서 목록 div*/
+	width: 1200px;
+	float:left;
+	height: 100%;
+	margin-top : 5px;
+}
+div[class="plan"]{ /*계획서 하나의 div*/
+    width: 1200px;
+    height: 280px;
+    margin: 35px auto;
+    border: 0;
+    border-radius : 5px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.plan_img{/*계획서의 사진*/
+	width : 400px;
+	height : 100%;
+	background-color : violet;
+	float : left;
+	position :relative;
+	z-index : 10;
+	border-radius : 5px 0 0 5px;
+}
+.city_img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position :relative;
+	z-index : 11;
+	border-radius : 5px 0 0 5px;
+}
+.square{
+    background-color: white;
+    transform: rotate(45deg);
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 13;
+    margin-left: 380px;
+    margin-top: -167px;
+}
+div[class="plan_content"]{	/*계획서 내부 div*/
+	width: 700px;
+    height: 120px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 50px;
+    position :relative;
+	z-index : 12;
+}
+span{ /*계획서 저장날짜*/
+	float: right;
+	font-size : 15px;
+    margin-right: 5px;
+}
+input[name*="del_plan"]{ /*계획서 삭제버튼 */
+	float: right;
+	width: 90px;
+	height: 40px;
+	margin-top: -5px;
+    margin-right: -15px;
+    border-radius : 5px;
+}
+a{
+	text-decoration-line: none;
+	color: rgb(64,64,64);
+}
+#end{
+	display: none;
+}
+#end_check{ /*지난일정 보지않기 */
+	margin-top: 30px;
+	margin-right: 80px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	color: gray;
+	border: 0.7px solid gray;
+	font-size: 13px;
+	cursor: pointer;
+	float: right;
+}
+input[name="make_plan"]{/*계획서 만들기 버튼*/
+	width: 150px;
+	height: 45px;
+	float: right;
+	margin : 30px auto;
+	border-radius: 5px;
+}
+.title{/*계획서 제목 글자*/
+	font-size : 20px;
+	font-weight : bold;
+	float : left;
+}
+.destination{/*계획서 도시*/
+	font-size : 17px;
+	font-weight : bold;
+	float : left;
+}
+img[src*="location"]{
+	width : 25px;
+	height : 25px;
+	float : left;
+}
+.trip_date{/*계획서 여행일자*/
+	font-size : 15px;
+}
+.thema_text{/*테마 글자*/
+	font-size : 13px;
+}
+footer{
+	margin-top: 0px;
+}

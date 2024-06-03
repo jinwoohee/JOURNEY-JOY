@@ -1,0 +1,720 @@
+body {
+    margin: 0px;
+	font-family: "Noto Sans KR", sans-serif;
+	color: #646464;
+	background: url("https://copilot.microsoft.com/rp/itdq0TGlsM-BDvSovDaQdrVxPbo.jpg");
+    background-size: cover;
+    position: relative;
+    isolation: isolate;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.7;
+}
+
+button, input[type="button"] {
+	cursor: pointer;
+}
+
+.workingholiday {
+	margin: 0px auto;
+    width: 1200px;
+    padding-top: 140px;
+}
+#detailArea > h2 {
+	width: 1000px;
+	margin: 0 auto;
+	font-size: 20px;
+    padding-bottom: 10px;
+}
+#detailArea { /* 상세검색 전체박스 */
+	margin-bottom: 50px;
+}
+#boxcenter { /* 상세검색박스 정렬 */
+	width: 1000px;
+	margin: 0 auto;
+}
+.detailBox {
+	height: 137px;
+}
+/* 상세검색-직종 */
+.job {
+	width: calc(1000px / 5);
+	height: 137px;
+	position: absolute;
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color: #f1f1f3;
+}
+.job > dt {
+	height: 35px;
+	line-height: 35px;
+	border: 1px groove #2c609c;
+	cursor: pointer;
+}
+.job > dt p {
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 13px;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 130px;
+}
+/* 상세검색-국가 */
+.nation {
+	width: calc(1000px / 5);
+	height: 137px;
+	position: absolute;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 200px;
+	background-color: #f1f1f3;
+}
+.nation > dt {
+	height: 35px;
+	line-height: 35px;
+	border: 1px groove #2c609c;
+	cursor: pointer;
+}
+.nation > dt p {
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 13px;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 130px;
+}
+.nation .ly_sub {
+	margin-left: -200px;
+}
+/* 상세검색-학력 */
+.edu {
+	width: calc(1000px / 5);
+	height: 137px;
+	position: absolute;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 400px;
+	background-color: #f1f1f3;
+}
+.edu > dt {
+	height: 35px;
+	line-height: 35px;
+	border: 1px groove #2c609c;
+	cursor: pointer;
+}
+.edu > dt p {
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 13px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+/* 상세검색-전공 */
+.major {
+	width: calc(1000px / 5);
+	height: 137px;
+	position: absolute;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 600px;
+	background-color: #f1f1f3;
+}
+.major > dt {
+	height: 35px;
+	line-height: 35px;
+	border: 1px groove #2c609c;
+	cursor: pointer;
+}
+.major > dt p {
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 13px;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 110px;
+}
+.major .ly_sub {
+	margin-left: -540px;
+}
+/* 상세검색-자격증 */
+.license {
+	width: calc(1000px / 5);
+	height: 137px;
+	position: absolute;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 800px;
+	background-color: #f1f1f3;
+}
+.license > dt {
+	height: 35px;
+	line-height: 35px;
+	border: 1px groove #2c609c;
+	cursor: pointer;
+}
+.license > dt p {
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 13px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+/* 상세검색-급여 */
+.salary {
+	width: calc(1000px / 5);
+	height: 137px;
+	position: absolute;
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color: #f1f1f3;
+}
+.salary > dt {
+	height: 35px;
+	line-height: 35px;
+	border: 1px groove #2c609c;
+	cursor: pointer;
+}
+.salary > dt p {
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 13px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+/* 상세검색-복리후생 */
+.benefit {
+	width: calc(1000px / 5);
+	height: 137px;
+	position: absolute;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 200px;
+	background-color: #f1f1f3;
+}
+.benefit > dt {
+	height: 35px;
+	line-height: 35px;
+	border: 1px groove #2c609c;
+	cursor: pointer;
+}
+.benefit > dt p {
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 13px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+/* 상세검색-근무기간 */
+.term {
+	width: calc(1000px / 5);
+	height: 137px;
+	position: absolute;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 400px;
+	background-color: #f1f1f3;
+}
+.term > dt {
+	height: 35px;
+	line-height: 35px;
+	border: 1px groove #2c609c;
+	cursor: pointer;
+}
+.term > dt p {
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 13px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+/* 상세검색-근무요일 */
+.date {
+	width: calc(1000px / 5);
+	height: 137px;
+	position: absolute;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 600px;
+	background-color: #f1f1f3;
+}
+.date > dt {
+	height: 35px;
+	line-height: 35px;
+	border: 1px groove #2c609c;
+	cursor: pointer;
+}
+.date > dt p {
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 13px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+/* 상세검색-근무시간 */
+.time {
+	width: calc(1000px / 5);
+	height: 137px;
+	position: absolute;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 800px;
+	background-color: #f1f1f3;
+}
+.time > dt {
+	height: 35px;
+	line-height: 35px;
+	border: 1px groove #2c609c;
+	cursor: pointer;
+}
+.time > dt p {
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 13px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.arrdown { /* 아래 화살표 */
+	float: left;
+	width: 10px;
+	height: 10px;
+	display: block;
+	margin-top: 13px;
+}
+.arrup { /* 위 화살표 */
+	float: left;
+	width: 10px;
+	height: 10px;
+	display: block;
+	margin-top: 13px;
+}
+/* 상세검색-초기화면모습 */
+.nano {
+	height: 98px;
+	margin-inline-start: 0;
+	position: relative;
+	border: 1px groove #2c609c;
+	z-index: 0;
+}
+.nano ul {
+	height: 98px;
+	line-height: 35px;
+	padding-left: 10px;
+	margin-top: 0;
+	margin-bottom: 0;
+	overflow: scroll;
+	overflow-x: hidden;
+	list-style: none;
+	background-color: white;
+}
+.ly_sub { /* 상세검색-검색필터 눌렀을때 */
+	width: 1000px;
+	/* height: 98px; */
+	margin-inline-start: 0;
+	position: absolute;
+	top: 37px;
+	z-index: 5;
+}
+.ly_sub_cnt { /* 상세검색 정렬 */
+	display: flex;
+}
+/* 상세검색-검색필터 클릭시 */
+.d_nano {
+	height: 98px;
+	margin-inline-start: 0;
+	position: relative;
+	border: 1px groove #2c609c;
+}
+.d_nano ul {
+	height: 98px;
+	line-height: 35px;
+	padding-left: 10px;
+	margin-top: 0;
+	margin-bottom: 0;
+	list-style: none;
+	background-color: white;
+}
+.item { /* li 크기설정-label이랑 동일 */
+	width: 160px;
+	height: 25px;
+	float: left;
+	margin-top: 3px;
+    margin-bottom: 3px;
+}
+/* 체크박스 모양 숨기기 */
+.inp_chk {
+	display: none;
+}
+.lb_tag { /* label 크기설정, 부모li와 동일 */
+	font-size: 13px;
+    width: fit-content;
+    height: 22px;
+    cursor: pointer;
+    padding-left: 3px;
+    padding-right: 3px;
+    display: flex;
+    align-items: center;
+}
+.detail_sec { /* 상세레이어 dd>dl */
+	width: calc(100%/2);
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.blind { /* 상세레이어 dt */
+	width: 0;
+	height: 0;
+	font-size: 0;
+	overflow: hidden;
+}
+.resultSetWrap { /* 조건창 전체 */
+	width: 1000px;
+	background-color: white;
+	position: relative;
+}
+.resultSet { /* 조건창 전체 */
+	padding: 25px 10px;
+	border: 1px groove #2c609c;
+}
+.listWrap { /* 조건창 dl */
+	width: 100%;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.resultList { /* 조건창 dd - 선택한 검색어 넣는 공간 */
+	margin-inline-start: 0;
+}
+.items { /* 조건창 - 선택한 검색어 전체 */
+	width: 730px;
+	max-width: 730px;
+	list-style: none;
+	padding-inline-start: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	overflow: hidden;
+}
+.items li { /* 조건창 - 선택한 검색어 */
+	height: 30px;
+	margin-right: 10px;
+	float: left;
+}
+
+li button {
+	color: black;
+    font-weight: 800;
+    height: 30px;
+	background: none;
+	border: none;
+}
+
+.item_reset button { /* 버튼 모양 */
+	color: #6c98b4;
+	font-weight: bold;
+	height: 30px;
+	background: none;
+	border: none;
+}
+.ico {
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	text-indent: -9999px;
+	vertical-align: middle;
+	margin-left: 5px;
+	margin-top: -2px;
+	background: url(../img/icon/delete.png) no-repeat;
+}
+.item_reset { /* 초기화 */
+	position: absolute;
+	top: 50%;
+	right: 180px;
+	margin-top: -15px;
+}
+.item_reset span {
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	text-indent: -999px;
+	vertical-align: middle;
+	margin-right: 5px;
+	margin-top: -3px;
+	background: url(../img/icon/reset.png) no-repeat;
+}
+.btnSet {
+	margin-inline-start: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    right: 15px;
+    width: 145px;
+    height: 50px;
+}
+.btn_sch {
+	width: 145px;
+	height: 50px;
+	font-weight: bold;
+    border: 0;
+    color: white;
+    background-color: #2c609c;
+}
+
+.btn_sch:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+/* 검색리스트 */
+.wrap_form {
+	width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wh_list {
+	width: 368px;
+    border: 1px groove #2c609c;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    margin-right: 15px;
+    margin-left: 15px;
+	background-color: white;
+}
+
+.wh_list:hover {
+	/* box-shadow: 3px 3px 3px #9BBBD7; */
+	box-shadow: 0px 4px 24px 0px #9BBBD7; 
+}
+
+.wrap_form ul {
+	list-style: none;
+	padding-inline-start: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.wrap_form hr {
+	border: 1px groove #cccccc;
+}
+
+.com_title { /* 공고제목 */
+	color: black;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 0px;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.com_name { /* 회사명 */
+	font-size: 14px;
+	margin-top: 0px;
+}
+
+.com_country { /* 나라,도시 */
+	font-size: 14px;
+	margin-top: 3px;
+    margin-bottom: 0px;
+}
+
+.com_job { /* 필터 */
+	font-size: 14px;
+	margin-top: 3px;
+    margin-bottom: 0px;
+}
+
+.com_wtime { /* 근무시간 */
+	font-size: 14px;
+	margin-top: 3px;
+    margin-bottom: 0px;
+}
+
+.com_sal { /* 급여 */
+	color: black;
+	font-size: 14px;
+	margin-top: 3px;
+    margin-bottom: 0px;
+}
+
+.com_etime { /* 마감날짜 */
+	color: #cccccc;
+	font-size: 14px;
+	float: right;
+	margin-top: 0px;
+}
+
+/* 사이드바 */
+.sideBar_wrap {
+	position: fixed;
+    top: 177px;
+    right: 150px;
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
+	box-shadow: 0 0 10px -3px rgba(0, 0, 0, .3);
+	z-index: 100;
+}
+
+.sideBar_name {
+	padding: 20px 20px;
+    background-color: #2c609c;
+}
+
+.sideBar_name p {
+	margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.sideBar_cont {
+	
+}
+
+.sideBar_cont ul {
+	list-style: none;
+    padding-inline-start: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 10px 0;
+}
+
+.sideBar_cont li {
+	padding: 5px 15px;
+	font-size: 14px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.sideBar_cont li:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+/* 더보기 버튼 */
+.more_div {
+	text-align: center;
+    margin-bottom: 50px;
+}
+
+.more_div input[type="button"] {
+	width: 150px;
+    height: 50px;
+    background-color: #2c609c;
+    border-color: #2c609c;
+    border-style: solid;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* 팝업 */
+.modal_wrap {
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    z-index: 100;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+	background-color: rgba(0, 0, 0, 0.65);
+	display: none;
+}
+
+.modal_wrap::before {
+	content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.05em;
+}
+
+.modal {
+	width: 45%;
+    height: 70%;
+    position: relative;
+    z-index: 101;
+    background-color: #fff;
+    vertical-align: middle;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.modal_title {
+	height: 60px;
+    padding: 0 20px;
+    line-height: 60px;
+    color: white;
+    background-color: #2c609c;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: left;
+}
+
+.modal_contents {
+	padding: 20px;
+	overflow-y: scroll;
+    height: calc(100% - 100px);
+}
+
+.modal_close {
+	display: block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.modal_close img {
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

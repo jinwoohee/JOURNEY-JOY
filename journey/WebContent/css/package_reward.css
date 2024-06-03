@@ -1,0 +1,60 @@
+body{
+	margin: 0;
+	color: #646464;
+	font-family: "Noto Sans KR", sans-serif;
+	background : url("https://logincdn.msauth.net/shared/5/images/2_bc3d32a696895f78c19d.svg");
+	background-size: cover;
+}
+
+#main_section{
+	padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+#main_section>div:first-of-type{
+	width: 700px;
+	background: white;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom : 40px;
+    box-shadow: 5px 5px 10px #CCCCCC;
+}
+
+/* 테이블 중앙정렬 */
+#rewardTable{
+	margin-left: auto;
+    margin-right: auto;
+}
+
+p{
+	font-size : 20px;
+	margin-left: 70px;
+}
+
+td{
+	font-size: 12px;
+}
+
+input[type="text"]{
+	width: 293px;
+	height: 40px;
+	margin-bottom: 10px;
+	padding-left : 10px;
+	border: 0.7px solid #6C94B8;
+}
+
+#buttonArea{
+	margin-top:20px;
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+}
+
+#buttonArea > input[type="submit"]{
+	width: 300px;
+	height: 45px;
+	background: #6C94B8;
+	border: none;
+	color: white;
+	font-weight: bold;
+}

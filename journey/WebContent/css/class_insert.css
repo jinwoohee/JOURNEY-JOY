@@ -1,0 +1,135 @@
+body{
+	margin: 0;
+	font-family: "Noto Sans KR", sans-serif;
+	color: #646464;
+	font-size: 15px;
+	background : url("https://logincdn.msauth.net/shared/5/images/2_bc3d32a696895f78c19d.svg");
+	background-size: cover;
+}
+
+/* 정보 입력 section */
+#main_section{
+	padding-top: 200px;
+	padding-bottom: 100px;
+}
+
+#main_section > div{
+	width: 700px;
+    height: 1110px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding-top: 50px;
+    box-shadow: 5px 5px 10px #CCCCCC;
+}
+
+/* 테이블 중앙정렬 */
+#classTable{
+	margin-left: auto;
+    margin-right: auto;
+}
+
+/* 콤보박스 */
+select{
+	width: 505px;
+	height: 50px;
+	border-radius: 10px;
+	border-color: #CCCCCC;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#endDt{
+	width: 490px;
+	height: 50px;
+}
+
+input[type="text"]{
+	width: 490px;
+	height: 50px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	border: 0.7px solid #CCCCCC;
+	padding-left: 10px;
+}
+
+textarea{
+	width: 490px;
+	height: 80px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	border: 0.7px solid #CCCCCC;
+	resize: none;
+	padding-top : 10px;
+	padding-left: 10px;
+}
+
+/* 첨부파일 -----------------------------------------------------------------------------------*/
+#thumnail div{
+	float: left;
+}
+
+/* 첨부파일 */
+#preview{
+	width: 152px;
+	height: 152px;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: #f1f1f3;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+/* 파일추가시 생성되는 태그 */
+#preview > img{
+	width: 152px;
+	height: 152px;
+	object-fit: cover;
+}
+
+/* 파일등록 버튼 */
+#fileBtn{
+	width: 90px;
+	height: 30px;
+	border-radius: 5px;
+	border:none;
+	background-color: #0D112D;
+	color: white;
+}
+
+#delBtn{
+	width: 90px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #CCCCCC;
+    margin-top: 120px;
+    color: white;
+}
+
+/* 등록버튼 누르면 실제로 실행되는 파일업로드*/
+input[type="file"]{
+	display: none;
+}
+
+#buttonArea{
+	width: 490px;
+	margin: 20px auto;
+}
+
+/* 등록하기 버튼 */
+#buttonArea > input[type="submit"]{
+	width: 490px;
+	height: 50px;
+	border-radius: 10px;
+	background: #0D112D;
+	border:none;
+	color: white;
+	margin-top: 50px;
+	font-weight: bold;
+}
+
+footer{
+	margin-top: 100px;
+	background: white;
+}

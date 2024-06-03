@@ -1,0 +1,133 @@
+body{
+	margin: 0;
+	color: #646464;
+	font-family: "Noto Sans KR", sans-serif;
+	overflow-y: scroll;
+	background : url("https://logincdn.msauth.net/shared/5/images/2_bc3d32a696895f78c19d.svg");
+	background-size: cover;
+}
+
+/* 일정 등록 section */
+#schedule_section{
+	padding-top: 200px;
+    padding-bottom: 100px;
+}
+
+#schedule_section > div{
+	width: 700px;
+    background: white;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom : 50px;
+    box-shadow: 5px 5px 10px #CCCCCC;
+}
+
+/* 테이블 중앙정렬 */
+#scheduleTable{
+	margin-left: auto;
+    margin-right: auto;
+}
+
+p{font-size: 20px; margin-left: 70px;}
+
+div[id*='day']{
+	width: 550px;
+    height: 50px;
+    background: white;
+    border: 2px solid #6C94B8;
+    margin-left: 70px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6C94B8;
+    font-weight: bold;
+}
+
+#form{
+	width: 550px;
+	padding-top: 20px;
+	border: 1px solid #6C94B8;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+
+}
+
+/* 콤보박스 */
+select{
+	width: 450px;
+	height: 40px;
+	border: 1px solid #6C94B8;
+	margin-bottom: 10px;
+	color: #646464;
+}
+
+input[type="text"]{
+	width: 445px;
+	height: 40px;
+	margin-bottom: 10px;
+	padding-left : 10px;
+	border: 1px solid #6C94B8;
+}
+
+textarea {
+	width: 427px;
+    height: 75px;
+    resize: none;
+    margin-bottom: 10px;
+    border: 1px solid #6C94B8;
+    padding: 10px;
+}
+
+/* 첨부파일 */
+#file div{
+	float: left;
+}
+
+/* 첨부파일 */
+#file>div{
+	width: 95px;
+	height: 95px;;
+	overflow: hidden;
+	background: #f1f1f3;
+	margin-right: 10px;	
+}
+
+#file>input[type="button"]{
+	width: 100px;
+    height: 40px;
+    background: white;
+    border: 0.7px solid #6C94B8;
+    color: #646464;
+    margin-top: 55px;
+    margin-left: 30px;
+}
+
+#buttonArea{width: 300px;}
+
+#buttonArea > button{
+	width: 450px;
+    height: 50px;
+    border: none;
+    background: #6C94B8;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: 122px;
+}
+
+input[type="submit"]{
+	width: 550px;
+    height: 50px;
+    border: none;
+    background: #0D112D;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: 70px;
+}

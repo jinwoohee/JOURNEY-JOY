@@ -1,0 +1,11 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+	<servlet>
+		<servlet-name>journeyjoy</servlet-name>
+		<servlet-class>com.jj.controller.JourneyController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>journeyjoy</servlet-name>
+		<url-pattern>*.jj</url-pattern>
+	</servlet-mapping>
+
+</web-app>

@@ -1,0 +1,239 @@
+@charset "UTF-8";
+
+body{
+	margin: 0;
+	font-family: "Noto Sans KR", sans-serif;
+	color:#646464;
+	/* background : url("https://logincdn.msauth.net/shared/5/images/2_bc3d32a696895f78c19d.svg");
+	background-size: cover; */
+	background: url("https://copilot.microsoft.com/rp/itdq0TGlsM-BDvSovDaQdrVxPbo.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+
+body>div:first-of-type{
+	padding-top: 150px;
+	padding-bottom: 210px;
+}
+
+section{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+/* 검색구간 */
+#search_section{
+	width: 1200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2a799c;
+    /* box-shadow: 3px 3px 3px #CCCCCC; */
+    margin-bottom: 20px;
+}
+
+/* 검색구간 - 콤보박스 */
+#search_section select{
+	width: 150px;
+	height: 40px;
+	margin-right: 20px;
+	text-align: center;
+	border: none;
+}
+
+/* 검색구간 - 검색창 */
+#search_section input[name="searchBox"]{
+	width: 300px;
+	height: 35px;
+	border: none;
+	padding-left : 10px;
+}
+
+/* 검색구간 - 검색버튼 */
+#search_section input[type='button']{
+	width: 80px;
+    height: 38px;
+    background: #0D112D;
+    color: white;
+    border: none;
+    padding-bottom: 4px;
+}
+
+/* 검색구간 - 소트 */
+#sort_section{
+	display : flex;
+	margin-right: 30px;
+}
+
+#sort_section img{
+	width : 85px;
+	height : 40px;
+	object-fit : cover;
+}
+
+#recent{
+	margin-right: 10px;
+}
+
+/* 작성버튼 */
+#search_section > div:last-of-type img{
+	width:40px;
+	height:40px; 
+	margin-left: 50px;
+	object-fit : cover;
+}
+
+
+/* ------------------------------------------------------------------- */
+
+/* list */
+#review_section{
+	width: 1200px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+#review_section > div:nth-of-type(2n){
+	margin-left : 74px;
+}
+
+.review{
+	width: 500px;
+    height: 590px;
+    padding: 20px 30px;
+    border: 1px solid #cccccc;
+    /* box-shadow: 3px 3px 3px #CCCCCC; */
+    margin: 30px 0;
+    float: left;
+    background: white;
+}
+
+/* 프로필, 닉네임, 수정버튼 div */
+.review div:first-of-type{
+	display: flex;
+	align-items: center;
+}
+
+/* 닉네임 */
+.review div:first-of-type >p{
+	font-size: 15px;
+	margin-left: 7px;
+	width: 100px;
+}
+
+.profile{
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	object-fit : cover;
+	overflow: hidden;
+}
+
+/* 수정/삭제 버튼 */
+.review button{
+	width: 70px;
+	height: 40px;
+	border: none;
+	font-weight: bold;
+}
+
+.modify{
+	background: #0D112D;
+	color : white;
+	margin-left: 195px;
+}
+
+.delete{
+	background : #CCCCCC;
+	color : white;
+	margin-left: 10px;
+}
+
+/* 관광지명 */
+.review div:nth-of-type(2) >p:first-of-type{
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom : -1px;
+}
+
+/* 별점 */
+.star{
+	appearance: none;
+	margin: 0;
+}
+
+.star+label{
+	font-size: 22px;
+	color: #fc0;
+}
+
+/* .star::after{
+	content: '☆';
+	color: #fc0;
+	font-size: 20px;
+} */
+
+/* 리뷰내용 */
+.review div:nth-of-type(2) > textarea{
+	width: 500px;
+    height: 80px;
+    font-size: 13px;
+    resize: none;
+    border: none;
+    margin-top: 15px;
+    background: none;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.file{
+	width:500px;
+	margin : 0 auto;
+}
+
+/* 첨부파일 */
+.file img{
+	border : none;
+	border-radius : 10px;
+	object-fit : cover;
+	overflow: hidden;
+}
+
+.file img:nth-of-type(1){
+	float : left;
+}
+
+.file img:nth-of-type(2){
+	float: left;
+	margin-left: 10px;
+	margin-bottom : 10px;
+}
+
+.file img:nth-of-type(3){
+	margin-left: 10px;
+	float : left;
+}
+
+
+.review div:last-of-type{
+	font-size : 12px;
+	float: right;
+	color:#cccccc;
+}
+
+#more_div{
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+#more_div > input[type='button']{
+	width: 200px;
+    height: 50px;
+    border: none;
+    background: #2a799c;;
+    color: white;
+    font-size: 15px;
+}

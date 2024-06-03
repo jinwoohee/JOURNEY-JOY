@@ -1,0 +1,141 @@
+body{
+	margin: 0;
+	font-family: "Noto Sans KR", sans-serif;
+	color: #646464;
+	font-size: 15px;
+	background : url("https://logincdn.msauth.net/shared/5/images/2_bc3d32a696895f78c19d.svg");
+	background-size: cover;
+}
+
+/* 정보 입력 section */
+#main_section{
+	padding-top: 200px;
+    padding-bottom: 100px;
+}
+
+#main_section > div{
+	width: 700px;
+    height: 1270px;
+    background: white;
+    margin: 0 auto;
+    padding-top: 50px;
+    box-shadow: 3px 3px 15px #CCCCCC;
+}
+
+/* 테이블 중앙정렬 */
+#packageTable{
+	margin-left: auto;
+    margin-right: auto;
+}
+
+/* 콤보박스 */
+select{
+	width: 245px;
+	height: 50px;
+	border-color: #CCCCCC;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#startDt, #endDt{
+	width: 231px;
+	height: 50px;
+	padding-left: 10px;
+}
+
+input[type="text"]{
+	width: 480px;
+	height: 50px;
+	margin-bottom: 20px;
+	border: 0.7px solid #CCCCCC;
+	padding-left: 10px;
+}
+
+textarea {
+	width: 475px;
+	height: 80px;
+	margin-bottom: 10px;
+	border: 0.7px solid #CCCCCC;
+	resize: none;
+	padding : 10px;
+}
+
+
+/* 썸네일 */
+#thumnail div{
+	float: left;
+	margin-bottom: 30px;
+}
+
+/* 이미지 */
+#thumnail>div:first-child{
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	background-position: center;
+	background: #f1f1f3;
+}
+
+/* 파일추가시 생성되는 태그 */
+#preview > img{
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+}
+
+/* 썸네일 추가/삭제 버튼 */
+
+#fileBtn{
+	width: 80px;
+	height: 30px;
+	margin-left: 10px;
+	border: none;
+	background: #0D112D;
+	color: #CCCCCC;
+	font-weight: bold;
+	margin-top: 120px;
+}
+
+#delBtn{
+	width: 80px;
+	height: 30px;
+	border: 0.7px solid #6C94B8;
+	background: white;
+	color: #6C94B8;
+	font-weight: bold;
+	margin-top: 120px;
+}
+
+/* 등록버튼 누르면 실제로 실행되는 파일업로드*/
+input[type="file"]{
+	display: none;
+}
+
+#buttonArea{
+	width: 490px;
+	margin: 20px auto;
+}
+
+/* 취소 버튼 */
+#buttonArea > input[type="button"]{
+	width: 240px;
+	height: 50px;
+	border:none;
+	font-weight: bold;
+	color: #646464;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background: #f1f1f3;
+	margin-right: 6px;
+}	
+
+/* 등록하기 버튼 */
+#buttonArea > input[type="submit"]{
+	width: 240px;
+	height: 50px;
+	background: #0D112D;
+	border:none;
+	color: white;
+	margin-top: 45px;
+	font-weight: bold;
+}

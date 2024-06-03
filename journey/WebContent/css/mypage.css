@@ -1,0 +1,966 @@
+@charset "UTF-8";
+
+body {
+	font-family: "Noto Sans KR", sans-serif;
+	color: #646464;
+	margin: 0px auto;
+	width: 100%;
+    height: 100%;
+    background : url("https://logincdn.msauth.net/shared/5/images/2_bc3d32a696895f78c19d.svg");
+	background-size: cover;
+}
+
+button, input[type="button"], .notification_wrap li, .dot {
+	cursor: pointer;
+}
+
+.all_wrap { /* 전체 div */
+	width: 100%;
+    height: 100%;
+	padding-top: 180px;
+}
+
+.sub_wrap {
+	width: 1200px;
+	margin: 0px auto;
+	padding-bottom: 100px;
+}
+
+.notification_wrap { /* 마이페이지 메뉴바 전체div */
+	
+}
+
+.notification_wrap > h1 { /* 회원 이름 */
+	color: black;
+}
+
+.tab { /* 마이페이지 메뉴바 */
+	
+}
+
+.tab ul {
+	height: 50px;
+	font-size: 14px;
+	list-style-type: none;
+	padding-inline-start: 0px;
+	margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.tab li {
+	font-size: 20px;
+    font-weight: 600;
+    width: fit-content;
+    float: left;
+	padding-bottom: 5px;
+    margin-right: 45px;
+}
+
+.click_li { /* tab에서 클릭된 li */
+	color: black;
+	border-bottom: 3px solid black;
+}
+
+.cards ul { /* 마이페이지 메뉴바 상세내용 */
+	height: 150px;
+	list-style-type: none;
+	padding-inline-start: 0px;
+	margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.cards li {
+	color: white;
+	font-size: 17px;
+	font-weight: 600;
+	border: 1px solid;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    padding: 25px;
+    float: left;
+    margin-right: 15px;
+}
+
+.no_active { /* 클릭되지 않은 cards li, content_wrap div */
+	display: none;
+}
+
+.cont_blank { /* 내용 없을 때 div */
+	/* text-align: center; */
+    font-size: 18px;
+    font-weight: 600;
+	height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 여행계획서 */
+.pn_wrap {
+	background-color: white;
+}
+
+.pn_list {
+	width: 1200px;
+	height: 100%;
+}
+
+.pn_size p {
+	margin-top: 0px;
+    margin-bottom: 0;
+    padding-top: 20px;
+    /* background-color: #ffffa7; */
+    width: fit-content;
+}
+
+.pn_size strong {
+	color: #FA5252;
+}
+
+.pn {
+	width: 1200px;
+    height: 280px;
+    margin: 35px auto;
+    border: 0;
+    border-radius : 5px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+}
+
+.pn_img {
+	width : 400px;
+	height : 100%;
+	background-color : violet;
+	float : left;
+	position :relative;
+	z-index : 10;
+	border-radius : 5px 0 0 5px;
+}
+
+.city_img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position :relative;
+	z-index : 11;
+	border-radius : 5px 0 0 5px;
+}
+.square{
+    background-color: white;
+    transform: rotate(45deg);
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 13;
+    margin-left: 380px;
+    margin-top: -167px;
+}
+
+.pn_content {
+	width: calc(100% - 400px);
+    height: 100%;
+    margin-left: 50px;
+	margin-right: 50px;
+	display: flex;
+    align-items: center;
+}
+
+.pn_sub {
+	width: 100%;
+    height: fit-content;
+}
+
+.pn_title {
+	display: flex;
+    justify-content: space-between;
+}
+
+.pn_title span {
+	font-size : 15px;
+	padding-top: 7px;
+}
+
+.pn_title { /*계획서 제목 글자*/
+	font-size : 20px;
+	font-weight : bold;
+	margin-top: 0px;
+}
+
+.destination { /*계획서 도시*/
+	font-size : 17px;
+	font-weight : bold;
+}
+
+img[src*="location"] {
+	width : 25px;
+	height : 25px;
+}
+
+.trip_date { /*계획서 여행일자*/
+	font-size : 15px;
+}
+
+.thema_text { /*테마 글자*/
+	font-size : 13px;
+}
+
+.pn_chkList {
+	display: flex;
+    justify-content: flex-end;
+}
+
+button[name*="chkList"] {
+	width: 90px;
+	height: 40px;
+    border-radius : 5px;
+    border: 1px solid #6C94B8;
+    color: #6C94B8;
+    font-weight: 600;
+    background-color: #fff;
+}
+
+.pn_blank {
+	/* text-align: center; */
+    font-size: 18px;
+    font-weight: 600;
+	height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 여행계획서-체크리스트 */
+.modal_wrap {
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    z-index: 100;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+	background-color: rgba(0, 0, 0, 0.65);
+	display: none;
+}
+
+.modal_wrap::before {
+	content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.05em;
+}
+
+.modal {
+	width: 30%;
+    height: 50%;
+    position: relative;
+    z-index: 101;
+    background-color: #fff;
+    vertical-align: middle;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.modal_title {
+	height: 25px;
+    padding: 0 20px;
+    line-height: 60px;
+    color: #000;
+    background-color: #e3e3e3;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: left;
+}
+
+.modal_contents {
+	padding: 10px 20px;
+	overflow-y: auto;
+    height: calc(100% - 45px);
+    text-align: left;
+}
+
+.modal_contents h1 {
+	text-align: center;
+    font-size: 30px;
+    margin: 0;
+    padding-bottom: 10px;
+    font-weight: 200;
+    color: #454545;
+}
+
+.fa-check {
+	font-size: 30px;
+	margin-right: 10px;
+	color: #6c94b8;
+}
+
+#todo-list {
+	width: 100%;
+    /* margin: 0 auto 50px auto; */
+    position: relative;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.todo-wrap {
+	display: block;
+    position: relative;
+    padding-left: 35px;
+    box-shadow: 0 2px 0 -1px #ebebeb;
+}
+
+.todo-wrap:last-of-type {
+	box-shadow: none;
+}
+
+.todo-wrap input[type="checkbox"] {
+	position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    top: -600px;
+}
+
+.todo {
+	display: inline-block;
+    font-weight: 200;
+    padding: 7px 5px;
+    height: 26px;
+    position: relative;
+	cursor: pointer;
+}
+
+.todo:before {
+	content: "";
+    display: block;
+    position: absolute;
+    top: calc(50% + 2px);
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: #FF4848;
+    transition: .25s ease-in-out;
+}
+
+.todo:after {
+	content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    height: 18px;
+    width: 18px;
+    top: 12px;
+    left: -25px;
+    box-shadow: inset 0 0 0 2px #d8d8d8;
+    transition: .25s ease-in-out;
+    border-radius: 4px;
+}
+
+.todo:hover:after {
+	box-shadow: inset 0 0 0 2px #949494;
+}
+
+.todo .fa-check{
+	position: absolute;
+	z-index: 1;
+	left: -31px;
+	top: 0;
+	font-size: 1px;
+	line-height: 36px;
+	width: 36px;
+	height: 36px;
+	text-align: center;
+	color: transparent;
+	text-shadow: 1px 1px 0 white, -1px -1px 0 white;
+}
+
+:checked + .todo {
+	color: #717171;
+}
+
+:checked + .todo:before {
+	width: 100%;
+}
+
+:checked + .todo:after {
+	box-shadow:inset 0 0 0 2px #6c94b8;
+}
+
+:checked + .todo .fa-check {
+	font-size: 20px;
+	line-height: 35px;
+	color: #6c94b8;
+}
+
+/* Delete Items */
+.delete-item {
+	display: block;
+	position: absolute;
+	height: 36px;
+	width: 36px;
+	line-height: 36px;
+	right: 0;
+	top: 0;
+	text-align: center;
+	color: #d8d8d8;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.todo-wrap:hover .delete-item {
+	opacity:1;
+}
+
+.delete-item:hover {
+	color: #FF4848;
+}
+
+/* Add Items */
+#add-todo {
+	margin: 25px 0 10px 12px;
+	font-size: 14px;
+	font-weight: 200;
+	color: #d8d8d8;
+	display: inline-block;
+	cursor: pointer;
+}
+
+#add-todo:hover {
+	color: #6c94b8;
+	transition: none;
+}
+
+.fa-plus {
+	font-size: 14px;
+	transition:none;
+}
+
+.input-todo {
+	border: none;
+	outline: none;
+	font-weight: 200;
+	position: relative;
+	top: -1px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.editing {
+  height: 0;
+  overflow: hidden;
+}
+
+.editing .todo-wrap {
+  box-shadow: 0 0 400px rgba(0,0,0,.8),inset 0 0px 0 2px #ebebeb;
+}
+
+.modal_close {
+	display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    background-color: #FF5A5A;
+    padding: 5px;
+}
+
+.modal_close img {
+	width: 12px;
+    height: 12px;
+    position: relative;
+    top: -4px;
+    left: 0px;
+}
+
+
+.package, .review, .userInfo { /* cards li */
+	border-bottom: 1px solid #2b2b2b;
+}
+
+.package li:hover, .review li:hover, .userInfo li:hover {
+	text-decoration: underline;
+}
+
+
+.package li:first-of-type, .review li:first-of-type, .userInfo li:first-of-type {
+	border-color: #12245c;
+    background-color: #12245c;
+}
+
+.package li:nth-of-type(2) {
+	border-color: #1e427f;
+    background-color: #1e427f;
+}
+
+.package li:last-of-type, .review li:last-of-type, .userInfo li:last-of-type {
+	border-color: #6c94b8;
+	background-color: #6c94b8;
+}
+
+/*.package li:first-of-type:hover, .review li:first-of-type:hover, .userInfo li:first-of-type:hover {
+	color: #646464;
+	background-color: white;
+}
+
+.package li:nth-of-type(2):hover {
+	color: #646464;
+	background-color: white;
+}
+
+.package li:last-of-type:hover, .review li:last-of-type:hover, .userInfo li:last-of-type:hover {
+	color: #646464;
+	background-color: white;
+}*/
+
+.content_wrap { /* 정보출력 전체 div */
+	background-color: #ffffffc7;
+}
+
+.package_making, .package_attending, .package_like { /* 패키지 */
+    padding: 30px 40px 100px 40px;
+}
+
+.package_making ul {
+	list-style: none;
+	padding-inline-start: 0px;
+	margin-top: 0px;
+    margin-bottom: 0px;
+}
+		
+.package_making li {
+	padding-top: 25px;
+	padding-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+.pk_size {
+	border-bottom: 1px solid #ddd;
+}
+
+.pk_size p {
+	margin-top: 0px;
+	margin-bottom: 25px;
+	/* background-color: #ffffa7; */
+	width: fit-content;
+}
+
+.pk_size strong {
+	color : #FA5252;
+}
+
+.pk_list { /* 패키지 기획내역 list */
+	width: 100%;
+	height: 200px;
+	display: -webkit-box;
+}
+
+.pk_img { /* 패키지 기획내역 img div */
+	width: 200px;
+	height: 200px;
+	margin-right: 40px;
+}
+
+.pk_img img { 
+	width: 100%;
+	height: 100%;
+	object-fit: cover
+}
+
+.pk_cont { /* 패키지 기획내역 contents */
+	height: fit-content;
+    margin-right: 40px;
+    width: 250px;
+    height: 100%;
+}
+
+.pk_list > div:nth-of-type(3) {
+	width: 440px;
+}
+
+.pk_cont > div {
+	display: flow-root;
+	margin-bottom: 10px;
+}
+
+.pk_cont p {
+	margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.pk_cont table { /* 패키지 기획내역-요금 */
+	width: 400px;
+	border: 1px #0D112D solid;
+    font-size: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+    border-collapse: collapse;
+    border-radius: 4px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 12px;
+}
+
+.pk_cont table td {
+	border-right: 0.1em solid #f1f1f3;
+	width: fit-content;
+	background: white;
+}
+
+.pk_cont table tr:first-of-type td {
+	background: #6C94B8;
+    color: #f1f1f3;
+    font-weight: bold;
+}
+
+.pk_cont table tr:first-of-type td p {
+	font-size: 9px;
+	color: #ccc;
+}
+
+.pk_cont table tr:last-of-type td {
+	
+}
+
+.pk_tag { /* 나라,도시 tag */
+	float: left;
+    border: 1px solid #6C94B8;
+    border-radius: 50px;
+    width: fit-content;
+    height: fit-content;
+    color: #6C94B8;
+    font-weight: 600;
+    text-align: center;
+    margin-right: 10px;
+    padding: 1px 7px;
+    background-color: white;
+}
+
+.pk_line {
+	display: inline-block;
+}
+
+.pk_title { /* 제목 */
+	font-size: 25px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.pk_days {
+	overflow-y: hidden;
+    /* text-overflow: ellipsis; */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+	line-height: 21px;
+}
+
+.pk_plan { /* 여행일정 */
+	font-size: small;
+	font-weight: 600;
+}
+
+.pk_btn { /* 패키지 기획내역-수정버튼 div */
+	height: 200px;
+	display: flex;
+    align-items: center;
+}
+
+.pk_btn button {
+	width: 110px;
+    height: 46px;
+	color: #6C94B8;
+	font-size: 15px;
+	font-weight: 600;
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: white;
+	border: 1px solid #6C94B8;
+	border-radius: 4px;
+}
+
+.pk_update_btn { /* 패키지 기획내역-수정버튼 하위div */
+	position: relative;
+    top: 125px;
+	right: 120px;
+    /* display: inline-grid; */
+    z-index: 5;
+    border: 1px solid #6c94b8;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+    padding: 10px 1px;
+    width: 130px;
+    height: 120px;
+    background-color: white;
+}
+
+.pk_update_btn button {
+	width: 100%;
+    height: 40px;
+    font-size: 13px;
+    letter-spacing: -1px;
+    background-color: white;
+    border: none;
+    box-sizing: border-box;
+}
+
+.pk_update_btn button:hover {
+	background-color: #f4f6fa;
+    color: #6c94b8;
+}
+
+.plan_review, .place_review { /* 일정리뷰, 장소리뷰 */
+	padding: 30px 40px 100px 40px;
+}
+
+.plan_review ul { /* 일정리뷰 */
+	list-style: none;
+	padding-inline-start: 0px;
+	margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+}
+
+.plan_review li {
+    width: calc((100% - 115px) / 2);
+    border: 1px solid #666666;
+    border-radius: 10px;
+    padding: 20px;
+    float: left;
+	margin-bottom: 25px;
+}
+
+.plan_review li:nth-of-type(2n-1) {
+	margin-right: 30px;
+}
+
+.plan_size {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 25px;
+}
+
+.plan_size p {
+	margin-top: 0px;
+	margin-bottom: 25px;
+	width: fit-content;
+}
+
+.plan_size strong {
+	color : #FA5252;
+}
+
+.plan_li {
+	width: 100%;
+}
+
+.plan_list { /* 일정리뷰 전체div */
+	width: 100%;
+	height: 200px;
+	display: -webkit-box;
+}
+
+.plan_img { /* 일정리뷰 img div */
+	width: 200px;
+	height: 200px;
+	margin-right: 40px;
+}
+
+.plan_img img { 
+	width: 100%;
+	height: 100%;
+	object-fit: cover
+}
+
+.plan_cont { /* 일정리뷰 contents */
+	width: calc(100% - 240px);
+	height: 100%;
+}
+
+.plan_cont div {
+	margin-bottom: 10px;
+}
+
+.plan_cont p {
+	margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.plan_date {
+	font-size: 12px;
+    color: #ccc;
+	display: flex;
+    justify-content: flex-end;
+}
+
+.plan_ctitle {
+	height: 101px;
+}
+
+.plan_title { /* 제목 */
+	font-size: 25px;
+	width: 100%;
+	padding-bottom: 10px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.plan_word {
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.plan_btn { /* 일정리뷰 버튼 div */
+	height: calc(100% - 138px);
+	display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.plan_btn button {
+	width: 110px;
+    height: 46px;
+	color: #6C94B8;
+	font-size: 15px;
+	font-weight: 600;
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: white;
+	border: 1px solid #6C94B8;
+	border-radius: 4px;
+	margin-right: 5px;
+}
+
+.plan_btn button:last-of-type:hover { /* 일정리뷰 삭제버튼 */
+    color: red;
+	border: 1px solid red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.user_wrap { /* 회원정보수정div */
+	padding: 30px 40px 100px 40px;
+}
+
+.profile { /* 회원정보-프로필div */
+	width: 200px;
+    float: left;
+}
+
+.pf_wrap {
+	display: grid;
+    justify-content: center;
+}
+
+.pf_img { /* 회원정보-프로필 img div */
+	margin-top: 0px;
+	margin-bottom: 0px;
+	width: fit-content;
+}
+
+.pf_img img {
+	object-fit: cover;
+    width: 100px;
+    height: 100px;
+}
+
+.pf_edit { /* 회원정보-프로필 편집button */
+	margin-bottom: 5px;
+}
+
+.user_field { /* 회원정보-내용div */
+	width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.tbl {
+	
+}
+
+.txt { 
+	width: 350px;
+    height: 20px;
+    padding: 7px;
+    border: 1px solid #646464;
+}
+
+.lb {
+	color: #959595;
+    font-size: 13px;
+}
+
+input[name="id"] {
+	background-color: #cccccc;
+    border-color: #cccccc;
+}
+
+.addr {
+	display: block;
+    padding-top: 15px;
+}
+
+#sample4_postcode {
+	width: 60px;
+    height: 20px;
+    padding: 7px;
+    margin-bottom: 5px;
+    border: 1px solid #646464;
+}
+
+#sample4_roadAddress {
+	margin-bottom: 5px;
+}
+
+.profile button, .tbl input[type="button"] {
+	width: 98px;
+    height: 34px;
+    padding: 7px;
+    /* border-radius: 10px; */
+    border: none;
+    background-color: #6C98BC;
+    color: white;
+    font-weight: bold;
+}
+
+.btn_wrap {
+	margin-top: 60px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.save_btn {
+	width: 150px;
+	height: 50px;
+	/* border-radius: 10px; */
+	border:none;
+	background-color: #2C609C;
+	color: white;
+	font-weight: bold;
+}
+
+

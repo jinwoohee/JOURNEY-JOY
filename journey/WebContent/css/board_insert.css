@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+body {
+	font-family: "Noto Sans KR", sans-serif;
+	color: #646464;
+	margin: 0px auto;
+	background: url("https://copilot.microsoft.com/rp/itdq0TGlsM-BDvSovDaQdrVxPbo.jpg");
+    background-size: cover;
+    position: relative;
+    isolation: isolate;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.7;
+}
+
+.board_wrap { /* 글쓰기 전체 */
+	width: 1200px;
+	padding-top: 220px;
+	padding-bottom: 220px;
+	margin: 0px auto;
+}
+
+.board {
+	border: 1px solid #f1f1f3;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #cccccc;
+    padding: 50px;
+    background-color: #fff;
+}
+
+.board > p {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.board_write { /* 글쓰기 */
+	border-top: 2px solid #0d112d;
+}
+
+.board_write > div { /* .title .info */
+	border-bottom: 1px solid #ddd;
+}
+
+.board_write > div:nth-of-type(4) {
+	border-bottom: 1px solid #0d112d;
+}
+
+.title { /* 제목 */
+	height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+.title div, .info div:first-of-type {
+	width: 15%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    background-color: #f1f1f3;
+}
+
+.title input[type="text"]  {
+	width: 85%;
+    height: 15px;
+	padding-left: 5px;
+	padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 5px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.info { /* 테마 */
+	height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+.slt { /* 테마선택 */
+	width: 87%;
+	margin-left: 15px;
+}
+
+.slt select {
+	height: 35px;
+	padding-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 10px;
+    margin-right: 5px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.cont textarea { /* 내용 */
+	width: 99%;
+    height: 300px;
+	margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    resize: none;
+    border-radius: unset;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.btn_wrap { /* 버튼 */
+	margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_wrap button {
+	width: 100px;
+	height: 50px;
+	padding-left: 5px;
+	padding-right: 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-right: 10px;
+    background-color: #0d112d;
+    border: 2px solid #0d112d;
+    color: #f1f1f3;
+    font-size: 15px;
+    font-family: "Noto Sans KR", sans-serif;
+    cursor: pointer;
+}
+
+.btn_wrap button:first-of-type {
+	height: 51px;
+	color: #646464;
+	background-color: #f1f1f3;
+	border: 2px solid #f1f1f3;
+}
+
+.btn_wrap a {
+	text-decoration: none;
+	color: #646464;
+}
+
+/* 제목or내용 입력시, 셀렉창 클릭시 */
+.cont textarea:focus, .title input[type="text"]:focus { 
+	outline: solid;
+	outline-width: 1px;
+	outline-color: #0d112d;
+}

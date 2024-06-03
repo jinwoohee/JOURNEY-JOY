@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="journey">
+	<!-- 우히 부분 -->
+	<select id="wh_select" resultType="com.jj.dto.Company">
+		select * from company order by com_no desc
+	</select>
+	
+	<select id="wh_listselect" resultType="com.jj.dto.Company">
+		select * from company where com_no = #{com_no}
+	</select>
+	
+	<select id="cs_select" resultType="com.jj.dto.Class_list">
+		select *, (select u_nickname from user where user.u_id = class_list.u_id) as u_nickname from class_list
+	</select>
+	
+	<select id="wh_search" parameterType="java.util.HashMap" resultType="com.jj.dto.Company">
+		select * from company where 
+		<trim prefixOverrides="or" suffixOverrides="or"> 
+		<!-- 대직종 -->
+		<if test="com_job1 != null">
+			<foreach collection="com_job1" item="item" index="index" separator="or" open="(" close=")">
+				com_job1 like concat('%', #{item}, '%')
+			</foreach>
+			or
+		</if>
+		
+		<!-- 세부직종 -->
+		<if test="com_job2 != null">
+			<foreach collection="com_job2" item="item" index="index" separator="or" open="(" close=")">
+				com_job2 like concat('%', #{item}, '%')
+			</foreach>
+			or
+		</if>
+		
+		<!-- 국가 -->
+		<if test="com_country != null">
+			<foreach collection="com_country" item="item" index="index" separator="or" open="(" close=")">
+				com_country like concat('%', #{item}, '%')
+			</foreach>
+			or
+		</if>
+		
+		<!-- 도시 -->
+		<if test="com_city != null">
+			<foreach collection="com_city" item="item" index="index" separator="or" open="(" close=")">
+				com_city like concat('%', #{item}, '%')
+			</foreach>
+			or
+		</if>
+		
+		<!-- 학력 -->
+		<if test="com_edu_level != null">
+			<foreach collection="com_edu_level" item="item" index="index" separator="or" open="(" close=")">
+				com_edu_level like concat('%', #{item}, '%')
+			</foreach>
+			or
+		</if>
+		
+		<!-- 전공 -->
+		<if test="com_major != null">
+			<foreach collection="com_major" item="item" index="index" separator="or" open="(" close=")">
+				com_major like concat('%', #{item}, '%')
+			</foreach>
+			or
+		</if>
+		
+		<!-- 자격증 -->
+		<if test="com_license != null">
+			<foreach collection="com_license" item="item" index="index" separator="or" open="(" close=")">
+				com_license like concat('%', #{item}, '%')
+			</foreach>
+			or
+		</if>
+		
+		<!-- 급여 -->
+		<if test="com_salary != null">
+			<foreach collection="com_salary" item="item" index="index" separator="or" open="(" close=")">
+				com_sal_name = #{item}
+			</foreach>
+			or
+		</if>
+		
+		<!-- 복리후생 -->
+		<if test="com_benefits != null">
+			<foreach collection="com_benefits" item="item" index="index" separator="or" open="(" close=")">
+				com_benefits like concat('%', #{item}, '%')
+			</foreach>
+			or
+		</if>
+		
+		<!-- 근무기간 -->
+		<if test="com_work_period != null">
+			<foreach collection="com_work_period" item="item" index="index" separator="or" open="(" close=")">
+				com_work_period like concat('%', #{item}, '%')
+			</foreach>
+			or
+		</if>
+		
+		<!-- 근무요일 -->
+		<if test="com_work_days != null">
+			<foreach collection="com_work_days" item="item" index="index" separator="or" open="(" close=")">
+				<if test="item == '평일(월~금)'">
+					com_work_days = '월,화,수,목,금'
+				</if>
+				<if test="item == '주말(토,일)'">
+					com_work_days = '토,일'
+				</if>
+			</foreach>
+			or
+		</if>
+		<if test="com_work_day != null">
+			com_work_days = #{com_work_day}
+			
+			or
+		</if>
+		
+		<!-- 근무시간 -->
+		<if test="wtime != null">
+			<foreach collection="wtime" item="item" index="index" separator="or" open="(" close=")">
+				<if test="item == '오전'">
+					<![CDATA[(com_start_time >= 6 and com_start_time <= 12 and com_end_time >= 6 and com_end_time <= 12)]]>
+				</if>
+				<if test="item == '오후'">
+					<![CDATA[(com_start_time >= 12 and com_start_time <= 18 and com_end_time >= 12 and com_end_time <= 18)]]>
+				</if>
+				<if test="item == '저녁'">
+					<![CDATA[(com_start_time >= 18 and com_start_time <= 24 and com_end_time >= 18 and com_end_time <= 24)]]>
+				</if>
+				<if test="item == '새벽'">
+					<![CDATA[(com_start_time >= 0 and com_start_time <= 6 and com_end_time >= 0 and com_end_time <= 6)]]>
+				</if>
+				<if test="item == '오전~오후'">
+					<![CDATA[(com_start_time >= 6 and com_start_time <= 18 and com_end_time >= 6 and com_end_time <= 18)]]>
+				</if>
+				<if test="item == '오후~저녁'">
+					<![CDATA[(com_start_time >= 12 and com_start_time <= 24 and com_end_time >= 12 and com_end_time <= 24)]]>
+				</if>
+				<if test="item == '저녁~새벽'">
+					<![CDATA[(com_start_time >= 18 and com_start_time <= 6 and com_end_time >= 18 and com_end_time <= 6)]]>
+				</if>
+				<if test="item == '새벽~오전'">
+					<![CDATA[(com_start_time >= 0 and com_start_time <= 12 and com_end_time >= 0 and com_end_time <= 12)]]>
+				</if>
+				<if test="item == '종일'">
+					<![CDATA[abs(com_end_time - com_start_time) >= 8]]>
+				</if>
+			</foreach>
+		</if>
+		</trim>
+		order by com_no desc
+	</select>
+	
+	
+	
+	
+	
+	<!-- 진수님 부분 -->
+	<!-- 견적 저장 -->
+	<insert id="estimate_insert" parameterType="com.jj.dto.Estimate">
+		insert into estimate values(default, #{u_id}, #{e_departure}, #{e_destination}, #{e_start_date}, #{e_end_date}, #{e_thema}, #{e_detail_thema}, #{e_volume}, #{e_food_taste}, curdate(), #{e_airplane}, #{e_hotel});
+		<selectKey resultType="com.jj.dto.Estimate" keyColumn="e_no" keyProperty="e_no" order="AFTER">
+			SELECT LAST_INSERT_ID() AS e_no
+		</selectKey>
+	</insert>
+	
+	<!-- 음식점 불러오기 -->
+	<select id="eatery_select" resultType="com.jj.dto.Eatery" parameterType="java.util.HashMap">	
+		select * from eatery where eat_city = #{e_destination} and 	
+		<foreach collection="eat_food_taste" item="item" index="index" separator="or" open="(" close=")"> 
+			eat_food_taste like CONCAT('%',#{item},'%')
+		</foreach>
+			order by RAND() LIMIT #{day} 
+	</select>
+	
+	<!-- 관광지 불러오기 -->
+	<select id="place_select" resultType="com.jj.dto.Place" parameterType="java.util.HashMap">		
+		select * from place where plac_city = #{e_destination} and plac_thema like CONCAT('%',#{plac_thema},'%') and 	
+		<foreach collection="plac_detail_thema" item="item" index="index" separator="or" open="(" close=")">
+			plac_detail_thema like CONCAT('%',#{item},'%')
+		</foreach> 
+			order by RAND() LIMIT #{day} 
+	</select>
+	
+	<!-- 장소검색 한거 불러오기 -->
+	<select id="search_place" resultType="com.jj.dto.Place" parameterType="java.util.HashMap">
+		select * from place where plac_city = #{city} and plac_name like CONCAT('%',#{text},'%') or plac_detail_thema like CONCAT('%',#{text},'%') order by plac_rating limit 15
+	</select>
+	<select id="search_eatery" resultType="com.jj.dto.Eatery" parameterType="java.util.HashMap">
+		select * from eatery where eat_city = #{city} and eat_name like CONCAT('%',#{text},'%') or eat_food_taste like CONCAT('%',#{text},'%') order by plac_rating limit 15
+	</select>
+	
+	<!-- 일정 저장 -->
+	<insert id="schedule_insert" parameterType="com.jj.dto.Schedule">
+		insert into schedule values(#{e_no}, #{sche_day}, #{place})
+	</insert>
+	
+	<!-- 견적,일정 저장 후 견적 불러오기 -->
+	<select id="estimate_selectone" parameterType="int" resultType="com.jj.dto.Estimate">
+		select * from estimate where e_no = #{e_no}
+	</select>
+	
+	<!-- 일정 불러오기 -->
+	<select id="schedule_select" parameterType="int" resultType="com.jj.dto.Schedule">
+		select * from schedule where e_no = #{e_no} order by sche_day
+	</select>
+	
+	<!-- 상품 불러오기 -->
+	<select id="product_select" parameterType="String" resultType="com.jj.dto.Product">
+		select * from product where prod_city = #{e_destination}
+	</select>
+	
+	<!-- 티켓 불러오기 -->
+	<select id="ticket_select" resultType="com.jj.dto.Ticket" parameterType="java.util.HashMap">
+		select * from ticket where tick_sort in
+			<foreach collection="tick_sort" item="item" index="index" separator="," open="(" close=")"> 
+			#{item}
+		</foreach>
+	</select>
+	
+	<!-- 계획서 저장 -->
+	<insert id="plan_insert" parameterType="com.jj.dto.Plan">
+		insert into plan values(default, #{e_no}, #{plan_title}, #{plan_product}, curdate(), #{plan_url})
+	</insert>
+	
+	<!-- u_id로 견적불러오기 -->
+	<select id="estimate_select" parameterType="String" resultType="com.jj.dto.Estimate">
+		select * from estimate where u_id = #{u_id}
+	</select>
+	
+	<!-- 여행계획서 리스트 -->
+	<select id="plan_select_id" parameterType="String" resultType="com.jj.dto.Plan">
+		 SELECT * FROM plan p
+        LEFT JOIN estimate e
+        ON p.e_no = e.e_no
+        WHERE u_id = #{u_id}
+	</select>
+	
+	<!-- 여행계획 삭제 -->
+	<delete id="plan_delete" parameterType="int">
+		delete from plan where e_no = #{e_no};
+	</delete>
+	
+	<delete id="schedule_delete" parameterType="int">
+		delete from schedule where e_no = #{e_no};
+	</delete>
+	
+	<delete id="estimate_delete" parameterType="int">
+		delete from estimate where e_no = #{e_no};
+	</delete>
+	
+	<!-- e_no로 plan 불러오기 -->
+	<select id="plan_select_eno" parameterType="int" resultType="com.jj.dto.Plan">
+		select * from plan where e_no = #{e_no}
+	</select>
+	<!-- 일정 수정 -->
+	<update id="schedule_update" parameterType="com.jj.dto.Schedule">
+		update schedule set place = #{place} where e_no = #{e_no} and sche_day = #{sche_day}
+	</update>
+	<!-- 일정수정 -->
+	<update id="plan_update" parameterType="com.jj.dto.Plan">
+		UPDATE plan 
+		SET plan_title = #{plan_title}, 
+		plan_product = #{plan_product} 
+		where e_no = #{e_no} 
+	</update>
+	<!-- 가계부 저장 -->
+	<insert id="account_insert" parameterType="com.jj.dto.Account">
+		insert into account values(#{e_no}, #{acc_day}, #{acc_order}, #{acc_amount}, #{acc_payment}, #{acc_contents}, #{acc_category}, #{acc_currency})
+	</insert>
+	<!-- 가계부 불러오기 -->
+	<select id="account_select" parameterType="int" resultType="com.jj.dto.Account">
+		select * from account where e_no = #{e_no} and acc_order > 0
+	</select>
+	<!-- 가계부삭제 -->
+	<delete id="account_delete" parameterType="int" >
+		delete from account where e_no = #{e_no}
+	</delete>
+	<!--여행지 불러오기 -->
+	<select id="place_selectAll" resultType="com.jj.dto.Place" parameterType="String">
+		select * from place 
+	</select>
+	<select id="eatery_selectAll" resultType="com.jj.dto.Eatery" parameterType="String">
+		select * from eatery
+	</select>
+	
+	
+	
+	<!-- 윤영 부분 -->
+	<!-- 패키지 insert -->
+	<insert id="packageInsert" parameterType="com.jj.dto.Package">
+		<selectKey resultType="com.jj.dto.Package" keyColumn="p_no,p_period,p_city" keyProperty="p_no,p_period,p_city" order="AFTER">
+			SELECT LAST_INSERT_ID() AS p_no, (SELECT datediff(p_end_date, p_start_date) FROM package WHERE p_no=LAST_INSERT_ID()) AS p_period, (SELECT p_city FROM package WHERE p_no=LAST_INSERT_ID())AS p_city
+		</selectKey>
+		INSERT INTO package VALUES(default, #{u_id}, #{p_nation}, #{p_city}, #{p_theme}, #{p_title}, #{p_start_date}, #{p_end_date}, ${p_volume}, #{p_due_date}, ${p_guide_pay}, curdate(), #{p_file}, #{p_notification}, #{p_url});
+	</insert>
+	
+	<!-- 패키지 리스트 select -->
+	<select id="packageSelect" resultType="com.jj.dto.Package" parameterType="java.util.HashMap">
+		SELECT DISTINCT p.p_no, p.p_file, p.p_nation, p.p_city, p.p_title, u.u_nickname, r.child_fee
+		FROM package p
+		LEFT JOIN user u
+		ON p.u_id = u.u_id
+		LEFT JOIN reward r
+		ON p.p_no = r.p_no
+		ORDER BY p.p_no DESC
+		LIMIT 8;
+	</select>
+	
+	<!-- 패키지 검색 -->
+	<select id="packageSearch" resultType="com.jj.dto.Package" parameterType="String">
+		SELECT DISTINCT p.p_no, p.p_file, p.p_nation, p.p_city, p.p_title, u.u_nickname, r.child_fee, p.p_due_date,
+			(SELECT COUNT(*) FROM package_like pl GROUP BY p_no HAVING p.p_no = pl.p_no) AS count
+		FROM package p 
+		LEFT JOIN user u
+		ON p.u_id = u.u_id
+		LEFT JOIN reward r
+		ON p.p_no = r.p_no
+		<where>
+			<trim prefixOverrides="and" suffixOverrides="and">
+			<if test="!param.equals('')">
+				<if test="param.equals('healing') || param.equals('activity') || param.equals('nature') || param.equals('themepark') || param.equals('eating') || param.equals('favorite')">
+					p.p_theme = #{param}
+				</if>
+				<if test="param.equals('japan') || param.equals('canada')">
+					p.p_nation = #{param}
+				</if>
+			</if>
+			</trim>
+		</where>
+		
+		<if test="param.equals('recent')">
+			ORDER BY p.p_no DESC
+		</if>
+		<if test="param.equals('popular')">
+			ORDER BY count DESC
+		</if>
+		<if test="param.equals('closing')">
+			ORDER BY p.p_due_date DESC
+		</if>
+		LIMIT 8;
+	</select>
+	
+	<!-- 좋아요 select --> 
+	<select id="likeSelect" resultType="com.jj.dto.Package_like">
+		SELECT * FROM package_like;
+	</select>
+	
+	<!-- 일정 리스트/장소 select -->
+	<select id="packagePlaceSelect" resultType="com.jj.dto.Place" parameterType="String">
+		SELECT * FROM place WHERE plac_city = #{selectCity}
+	</select>
+	
+	<!-- 일정 리스트/식당 select -->
+	<select id="packageEatSelect" resultType="com.jj.dto.Eatery" parameterType="String">
+		SELECT * FROM eatery WHERE eat_city = #{selectCity}
+	</select>
+	
+	<!-- 일정 insert -->
+	<insert id="pscheduleInsert" parameterType="java.util.HashMap">
+		INSERT INTO package_schedule VALUES
+			<foreach collection="package_schedule" item="item" index="index" separator=",">
+				(${item.p_no}, #{item.ps_schedule}, #{item.ps_day}, #{item.ps_title}, #{item.ps_contents}, #{item.ps_notification})
+			</foreach>
+	</insert>
+	
+	<!-- 리워드 insert -->
+	<insert id="rewardInsert" parameterType="com.jj.dto.Reward">
+		INSERT INTO reward VALUES(${p_no}, ${adult_fee}, ${std_fee}, ${child_fee});
+	</insert>
+	
+	<!-- 상세보기 select -->
+	<select id="packageDetailSelect" resultType="com.jj.dto.Package" parameterType="int">
+		SELECT DISTINCT p.p_no, p.u_id, p.p_title, p.p_theme, p.p_nation, p.p_city, p.p_start_date, p.p_end_date, p.p_volume, p.p_due_date, p.p_file, 
+		       p.p_notification, p.p_url, u.u_nickname, u.u_profile, r.adult_fee, r.std_fee, r.child_fee,
+		       (SELECT SUM(adult_num+std_num+child_num) FROM purchase WHERE p_no = ${p_no}) AS cnt
+		FROM package p
+		LEFT JOIN user u
+		ON p.u_id = u.u_id
+		LEFT JOIN reward r
+		ON p.p_no = r.p_no
+		where p.p_no = ${p_no}
+		ORDER BY p.p_no DESC;
+	</select>
+	
+	<!-- 상세보기/좋아요 select -->
+	<select id="likeSelectDetail" resultType="com.jj.dto.Package_like" parameterType="com.jj.dto.Package_like">
+		SELECT distinct * FROM package_like WHERE p_no = ${p_no} and u_id = #{u_id}
+	</select>
+	
+	<!-- 상세보기/일정 select -->
+	<select id="packageScheduleSelect" resultType="com.jj.dto.Package_schedule" parameterType="int">
+	   SELECT DISTINCT ps.ps_day, ps.ps_schedule, ps_title, ps_contents, ps_notification,
+              p.plac_no, p.plac_name, p.plac_addr, p.plac_explan, p.plac_file1, p.plac_file2, p.plac_file3
+       FROM package_schedule ps
+       LEFT JOIN place p
+       ON ps.ps_schedule in (p.plac_no)
+       WHERE ps.p_no = ${p_no}
+	</select>
+	
+	<!-- 상세보기/참여 select -->
+	<select id="purchaseSelect" resultType="com.jj.dto.Purchase" parameterType="com.jj.dto.Purchase">
+		SELECT * FROM purchase WHERE p_no = ${p_no} and u_id = #{u_id}
+	</select>
+	
+	<!-- 좋아요 insert -->
+	<insert id="likeInsert" parameterType="com.jj.dto.Package_like">
+		INSERT INTO package_like VALUES(#{u_id}, ${p_no});
+	</insert>
+	
+	<!-- 좋아요 취소 -->
+	<delete id="likedelete" parameterType="com.jj.dto.Package_like">
+		DELETE FROM package_like WHERE u_id=#{u_id} and p_no=${p_no};
+	</delete>
+	
+	<!-- 구매하기 -->
+	<insert id="purchaseInsert" parameterType="com.jj.dto.Purchase">
+		INSERT INTO purchase VALUES(#{u_id}, ${p_no}, ${adult_num}, ${std_num}, ${child_num}, curdate());
+	</insert>
+	
+	<!-- 구매취소 -->
+	<insert id="purchasedelete" parameterType="com.jj.dto.Purchase">
+		DELETE FROM purchase WHERE u_id=#{u_id} and p_no=${p_no};
+	</insert>
+	
+	<!-- 패키지/댓글 입력  -->
+	<insert id="commInsert" parameterType="com.jj.dto.Community">
+		INSERT INTO community VALUES(default, ${p_no}, #{u_id}, #{comm_contents}, curdate());
+	</insert>
+	
+	<!-- 패키지/댓글 select -->
+	<select id='commSelect' resultType="com.jj.dto.Community">
+		SELECT c.comm_no, c.comm_contents, c.comm_date, u.u_nickname, u.u_profile
+		FROM community c 
+		LEFT JOIN user u
+		ON c.u_id = u.u_id
+		WHERE p_no = ${p_no};
+	</select>
+	
+	<!-- 장소리뷰 검색필터  -->
+	<select id="placeReviewSearch" resultType="com.jj.dto.Location_review" parameterType="java.util.HashMap">
+		SELECT DISTINCT l.*, u.u_nickname, u.u_profile, p.plac_name AS plac_name, e.eat_name as eat_name
+		FROM location_review l
+		LEFT JOIN user u
+		ON l.u_id = u.u_id
+		LEFT JOIN place p
+		ON l.pl_eat_no = p.plac_no
+		LEFT JOIN eatery e
+		ON l.pl_eat_no = e.eat_no
+		<where>
+			<if test="city != null or search != null">
+				<if test="city!= '' and search == ''">
+					p.plac_city = #{city} or e.eat_city = #{city}
+				</if>
+				<if test="search!= '' and city == ''">
+					l.lr_contents like concat('%', #{search}, '%')
+				</if>
+				<if test="city !='' and search != ''">
+					(p.plac_city = #{city} or e.eat_city = #{city}) and l.lr_contents like concat('%', #{search}, '%')
+				</if>
+			</if>
+		</where>
+		<if test="param != null">
+			<if test="param.equals('recent')">
+				ORDER BY l.lr_no DESC;
+			</if>
+			<if test="param.equals('starRating')">
+				ORDER BY l.lr_star DESC;		
+			</if>
+		</if>
+	</select>
+	
+	<!-- 문의하기 insert -->
+	<insert id="inquiry_insert" parameterType="com.jj.dto.Inquiry">
+		insert into inquiry values(default, #{p_no}, #{p_uid}, #{p_title}, #{u_id}, #{i_contents}, curdate(), 0);
+	</insert>
+	
+	<!-- 문의하기 select -->
+	<select id="inquiry_select" parameterType="int" resultType="com.jj.dto.InqNotice">
+		select u_id, p_no, (select u_id from package p where p.p_no = i.p_no) as p_uid  from inquiry i where p_no = #{p_no};
+	</select>
+	
+	<!-- 일정리뷰 search -->
+	<select id="planReviewSearch" resultType="com.jj.dto.Plan_review" parameterType="java.util.HashMap">
+		SELECT DISTINCT p.*, u.u_nickname, u.u_profile, e.e_destination
+		FROM plan_review p
+		LEFT JOIN user u
+		ON p.u_id = u.u_id
+		LEFT JOIN estimate e
+		ON p.e_no = e.e_no
+		<where>
+			<if test="city != null">
+				<if test="!city.equals('choice') and search == ''">
+					e.e_destination = #{city}
+				</if>
+				<if test="!city.equals('choice') and search != ''">
+					e.e_destination = #{city} and p.pr_title LIKE concat('%', #{search}, '%')
+				</if>
+			</if>
+			<if test="search != ''">
+				p.pr_title LIKE concat('%', #{search}, '%')
+			</if>
+		</where>
+		ORDER BY p.pr_no DESC;
+	</select>
+</mapper>

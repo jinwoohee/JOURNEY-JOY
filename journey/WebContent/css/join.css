@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+body{
+	margin: 0;
+	color: #646464;
+	font-family: "Noto Sans KR", sans-serif;
+	background : url("https://logincdn.msauth.net/shared/5/images/2_bc3d32a696895f78c19d.svg");
+	background-size: cover;
+}
+
+body > div{
+	width: 700px;
+	background-color: white;
+	margin: 0 auto;
+	box-shadow: 5px 5px 10px #CCCCCC;
+}
+
+/* 회원가입 텍스트 */
+p {
+	font-size: 30px;
+    padding: 50px 100px;
+    float: left;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+table{
+	margin-left: 20px;
+}
+
+label{
+	margin-left: 10px;
+	color: red;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/* 메인이동 */
+.imgBox {
+	width: 50px;
+    height: 50px;
+    padding: 50px 100px;
+    margin-top: 10px;
+    float: right;
+}
+
+.imgBox a {
+	width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.imgBox img{
+	width: 100%;
+    height: 100%;
+}
+
+input[type="text"]{
+	width: 390px;
+    height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid #CCCCCC;
+    padding-left: 10px;
+}
+
+/* 패스워드/패스워드 확인 입력 칸 */
+input[type="password"]{
+	width: 490px;
+    height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid #CCCCCC;
+    padding-left: 10px;
+}
+
+input[type="button"]{
+	width: 97px;
+	height: 55px;
+	border:none;
+	background-color: #6C98BC;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/* 이름 입력 칸 */
+#nameBox{
+	width: 492px;
+	height: 50px;
+}
+
+/* 콤보박스 */
+select{
+	width: 160px;
+	height: 53px;
+	border-color: #CCCCCC;
+	margin-bottom: 20px;
+}
+
+/* 휴대폰번호 입력 칸 */
+select ~ input[type="text"]{
+	width: 147px;
+	height: 50px;
+}
+
+/* 생년월일 콤보박스 
+#birth > select {
+	margin-right: 10px;
+}*/
+
+#birth input { /* 생년월일 입력칸 */
+	width: 492px;
+	height: 50px;
+}
+
+/* 이메일 주소 입력 칸 */
+#emailBox{
+	width: 310px;
+	height: 50px;
+}
+
+/* 상세주소 입력 칸 */
+input[type="button"] ~ input[type="text"]{
+	width: 492px;
+	height: 50px;
+	margin-top: -10px;
+}
+
+/* 가입하기 버튼 */
+#buttonArea>input[type="submit"]{
+	width: 510px;
+	height: 58px;
+	border:none;
+	background-color: #2C609C;
+	color: white;
+	font-weight: bold;
+	margin-top: 70px;
+	margin-bottom: 150px;
+	cursor: pointer;
+} 
+
+/*라디오 버튼 커스텀*/
+.form_radio_btn {
+	width: 240px;
+	height : 50px;
+    border: 1px solid #6C94B8;
+    float: left;
+    margin-right: 20px;
+}
+.form_radio_btn input[type=radio] {
+	display: none;
+}
+.form_radio_btn label {
+	display: block;
+   	margin: 0 auto;
+    text-align: center;
+    height: -webkit-fill-available;
+    line-height: 50px;
+    cursor: pointer;
+}
+		 
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+	background: #6C94B8;
+	border: none;
+	color: #fff;
+}
+		 
+/* Hover */
+.form_radio_btn label:hover {
+	color: #666;
+}
+		 
+/* Disabled */
+.form_radio_btn input[type=radio] + label {
+	background: #F9FAFC;
+	color: #666;
+}
