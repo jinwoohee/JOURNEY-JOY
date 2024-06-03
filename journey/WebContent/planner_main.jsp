@@ -66,6 +66,11 @@ var weatherIcon = {
 };
 var apiuri_s = "https://api.openweathermap.org/data/2.5/forecast?q=seoul&lang=kr&appid=fd030a11701fb174c6d72a31e5b7d170";
 var apiuri_t = "https://api.openweathermap.org/data/2.5/forecast?q=tokyo&lang=kr&appid=fd030a11701fb174c6d72a31e5b7d170";
+var apiuri_o = "https://api.openweathermap.org/data/2.5/forecast?q=osaka&lang=kr&appid=fd030a11701fb174c6d72a31e5b7d170";
+var apiuri_b = "https://api.openweathermap.org/data/2.5/forecast?q=bangkok&lang=kr&appid=fd030a11701fb174c6d72a31e5b7d170";
+var apiuri_tr = "https://api.openweathermap.org/data/2.5/forecast?q=toronto&lang=kr&appid=fd030a11701fb174c6d72a31e5b7d170";
+var apiuri_n = "https://api.openweathermap.org/data/2.5/forecast?q=New York City&lang=kr&appid=fd030a11701fb174c6d72a31e5b7d170";
+
 
 $.ajax({
     url: apiuri_s,
@@ -77,13 +82,30 @@ $.ajax({
 		for(var i = 0 ; i < resp.list.length ; i++){
 			if((resp.list[i].dt-resp.list[0].dt)%86400 == 0){
 				var date_t = resp.list[i].dt_txt;
-				var $date = date_t.substr(5,5)+"&nbsp;&nbsp;&nbsp;";	
+				var date_mo = date_t.substr(5,5);
+				var date_re = date_mo.replaceAll("-","/");
+				var $date = date_re + " ";
 				var temp_o = resp.list[i].main.temp-273.15;
-				var $temp = Math.floor(temp_o)+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-				var $weather = resp.list[i].weather[0].description+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+				var $temp = Math.floor(temp_o)+" ";
+				var weather = resp.list[i].weather[0].main;
+				var img_src ="";
+				if(weather == "Clear"){
+					img_src = "img/icon/w_clear.jpg";
+				}else if(weather == "Wind"){
+					img_src = "img/icon/w_wind.jpg";
+				}else if(weather == "Clouds"){
+					img_src = "img/icon/w_cloud.jpg";
+				}else if(weather == "Rain"){
+					img_src = "img/icon/w_rain.jpg";
+				}else if(weather == "Snow"){
+					img_src = "img/icon/w_snow.jpg";
+				}
+				var img_re = document.createElement("img");
+				img_re.setAttribute("src", img_src);
+				img_re.name = "weather_img";
+				$('#w_weather').append(img_re);
 				
-				$('#w_date').append($date);
-				$('#w_weather').append($weather);
+				$('#w_date').append($date);			
 				$('#w_temp').append($temp);
 			}
 		}
@@ -97,29 +119,187 @@ $.ajax({
     type: "GET",
     async: "false",
     success: function(resp) {
+    	
 		for(var i = 0 ; i < resp.list.length ; i++){
 			if((resp.list[i].dt-resp.list[0].dt)%86400 == 0){
 				var date_t = resp.list[i].dt_txt;
-				var $date = date_t.substr(5,5)+"&nbsp;&nbsp;&nbsp;";	
-				var temp_o  = resp.list[i].main.temp-273.15;
-				var $temp = Math.floor(temp_o)+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-				var $weather = resp.list[i].weather[0].description+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+				var $date = date_t.substr(5,5)+" ";	
+				var temp_o = resp.list[i].main.temp-273.15;
+				var $temp = Math.floor(temp_o)+" ";
+				var weather = resp.list[i].weather[0].main;
+				var img_src ="";
+				if(weather == "Clear"){
+					img_src = "img/icon/w_clear.jpg";
+				}else if(weather == "Wind"){
+					img_src = "img/icon/w_wind.jpg";
+				}else if(weather == "Clouds"){
+					img_src = "img/icon/w_cloud.jpg";
+				}else if(weather == "Rain"){
+					img_src = "img/icon/w_rain.jpg";
+				}else if(weather == "Snow"){
+					img_src = "img/icon/w_snow.jpg";
+				}
+				var img_re = document.createElement("img");
+				img_re.setAttribute("src", img_src);
+				img_re.name = "weather_img";
+				$('#tw_weather').append(img_re);
 				
-				$('#tw_date').append($date);
-				$('#tw_weather').append($weather);
+				$('#tw_date').append($date);			
 				$('#tw_temp').append($temp);
 			}
 		}
     }
 })
-
 $.ajax({
-    url: "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=cSbAPPbCZnZRACrILukqKUUM9qewJzGK&data=AP01",
+    url: apiuri_o,
     dataType: "json",
     type: "GET",
-    success: function(data) {
-    	alert(data[1].cur_unit);
+    async: "false",
+    success: function(resp) {
 
+		for(var i = 0 ; i < resp.list.length ; i++){
+			if((resp.list[i].dt-resp.list[0].dt)%86400 == 0){
+				var date_t = resp.list[i].dt_txt;
+				var $date = date_t.substr(5,5)+" ";	
+				var temp_o = resp.list[i].main.temp-273.15;
+				var $temp = Math.floor(temp_o)+" ";
+				var weather = resp.list[i].weather[0].main;
+				var img_src ="";
+				if(weather == "Clear"){
+					img_src = "img/icon/w_clear.jpg";
+				}else if(weather == "Wind"){
+					img_src = "img/icon/w_wind.jpg";
+				}else if(weather == "Clouds"){
+					img_src = "img/icon/w_cloud.jpg";
+				}else if(weather == "Rain"){
+					img_src = "img/icon/w_rain.jpg";
+				}else if(weather == "Snow"){
+					img_src = "img/icon/w_snow.jpg";
+				}
+				var img_re = document.createElement("img");
+				img_re.setAttribute("src", img_src);
+				img_re.name = "weather_img";
+				$('#ow_weather').append(img_re);
+				
+				$('#ow_date').append($date);			
+				$('#ow_temp').append($temp);
+			}
+		}
+	
+    }
+})
+$.ajax({
+    url: apiuri_b,
+    dataType: "json",
+    type: "GET",
+    async: "false",
+    success: function(resp) {
+
+		for(var i = 0 ; i < resp.list.length ; i++){
+			if((resp.list[i].dt-resp.list[0].dt)%86400 == 0){
+				var date_t = resp.list[i].dt_txt;
+				var $date = date_t.substr(5,5)+" ";		
+				var temp_o = resp.list[i].main.temp-273.15;
+				var $temp = Math.floor(temp_o)+" ";
+				var weather = resp.list[i].weather[0].main;
+				var img_src ="";
+				if(weather == "Clear"){
+					img_src = "img/icon/w_clear.jpg";
+				}else if(weather == "Wind"){
+					img_src = "img/icon/w_wind.jpg";
+				}else if(weather == "Clouds"){
+					img_src = "img/icon/w_cloud.jpg";
+				}else if(weather == "Rain"){
+					img_src = "img/icon/w_rain.jpg";
+				}else if(weather == "Snow"){
+					img_src = "img/icon/w_snow.jpg";
+				}
+				var img_re = document.createElement("img");
+				img_re.setAttribute("src", img_src);
+				img_re.name = "weather_img";
+				$('#bw_weather').append(img_re);
+				
+				$('#bw_date').append($date);			
+				$('#bw_temp').append($temp);
+			}
+		}
+	
+    }
+})
+$.ajax({
+    url: apiuri_tr,
+    dataType: "json",
+    type: "GET",
+    async: "false",
+    success: function(resp) {
+
+		for(var i = 0 ; i < resp.list.length ; i++){
+			if((resp.list[i].dt-resp.list[0].dt)%86400 == 0){
+				var date_t = resp.list[i].dt_txt;
+				var $date = date_t.substr(5,5)+" ";	
+				var temp_o = resp.list[i].main.temp-273.15;
+				var $temp = Math.floor(temp_o)+" ";
+				var weather = resp.list[i].weather[0].main;
+				var img_src ="";
+				if(weather == "Clear"){
+					img_src = "img/icon/w_clear.jpg";
+				}else if(weather == "Wind"){
+					img_src = "img/icon/w_wind.jpg";
+				}else if(weather == "Clouds"){
+					img_src = "img/icon/w_cloud.jpg";
+				}else if(weather == "Rain"){
+					img_src = "img/icon/w_rain.jpg";
+				}else if(weather == "Snow"){
+					img_src = "img/icon/w_snow.jpg";
+				}
+				var img_re = document.createElement("img");
+				img_re.setAttribute("src", img_src);
+				img_re.name = "weather_img";
+				$('#trw_weather').append(img_re);
+				
+				$('#trw_date').append($date);			
+				$('#trw_temp').append($temp);
+			}
+		}
+	
+    }
+})
+$.ajax({
+    url: apiuri_n,
+    dataType: "json",
+    type: "GET",
+    async: "false",
+    success: function(resp) {
+
+		for(var i = 0 ; i < resp.list.length ; i++){
+			if((resp.list[i].dt-resp.list[0].dt)%86400 == 0){
+				var date_t = resp.list[i].dt_txt;
+				var $date = date_t.substr(5,5)+" ";	
+				var temp_o = resp.list[i].main.temp-273.15;
+				var $temp = Math.floor(temp_o)+" ";
+				var weather = resp.list[i].weather[0].main;
+				var img_src ="";
+				if(weather == "Clear"){
+					img_src = "img/icon/w_clear.jpg";
+				}else if(weather == "Wind"){
+					img_src = "img/icon/w_wind.jpg";
+				}else if(weather == "Clouds"){
+					img_src = "img/icon/w_cloud.jpg";
+				}else if(weather == "Rain"){
+					img_src = "img/icon/w_rain.jpg";
+				}else if(weather == "Snow"){
+					img_src = "img/icon/w_snow.jpg";
+				}
+				var img_re = document.createElement("img");
+				img_re.setAttribute("src", img_src);
+				img_re.name = "weather_img";
+				$('#nw_weather').append(img_re);
+				
+				$('#nw_date').append($date);			
+				$('#nw_temp').append($temp);
+			}
+		}
+	
     }
 })
 
@@ -128,7 +308,9 @@ $.ajax({
 	type : "post",
 	url : "currencyInfo.jj?page=currency",
 	success : function(data){
-			$("#exchange_div").html(data);
+		for(var i = 1 ; i <= 13 ; i++){
+			$("#exchange_div"+i).html(data);
+		}
 	}
 });
 
@@ -602,23 +784,59 @@ $.ajax({
 				<%} %>					
 			</div>
 			<div id="img_div">
-				<div id="curr_div">
-					환율
-					<p id="curr_li"></p>
+			<div id="ex_slide">
+				<div id="exchange_view">
+					<div id="exchange_div1" class="exc"></div>
+					<div id="exchange_div2" class="exc"></div>
+					<div id="exchange_div3" class="exc"></div>
+					<div id="exchange_div4" class="exc"></div>
+					<div id="exchange_div5" class="exc"></div>
+					<div id="exchange_div6" class="exc"></div>
+					<div id="exchange_div8" class="exc"></div>
+					<div id="exchange_div9" class="exc"></div>
+					<div id="exchange_div10" class="exc"></div>
+					<div id="exchange_div11" class="exc"></div>
+					<div id="exchange_div12" class="exc"></div>
+					<div id="exchange_div13" class="exc"></div>
 				</div>
-				서울날씨
-				<p id="w_date"></p>
-				<p id="w_weather"></p>
-				<p id="w_temp"></p>
-				<br><br>
-				도쿄날씨
-				<p id="tw_date"></p>
-				<p id="tw_weather"></p>
-				<p id="tw_temp"></p>
-				
-				<div id="exchange_div"></div>
 			</div>
 			
+				<div id="weather_div">
+				<div id="w_info">
+					<span id="w_city">도시</span><span id = "w_date"></span>
+				</div>
+				<div class="forecast">
+					<span class="w_city_name">서울</span>
+					<span id="w_weather"></span>
+					<p id="w_temp"></p>
+				</div>
+				<div class="forecast">
+					<span class="w_city_name">도쿄</span>
+					<span id="tw_weather"></span>
+					<p id="tw_temp"></p>
+				</div>
+				<div class="forecast">
+					<span class="w_city_name">오사카</span>
+					<span id="ow_weather"></span>
+					<p id="ow_temp"></p>
+				</div>
+				<div class="forecast">
+					<span class="w_city_name">방콕</span>
+					<span id="bw_weather"></span>
+					<p id="bw_temp"></p>
+				</div>
+				<div class="forecast">
+					<span class="w_city_name">토론토</span>
+					<span id="trw_weather"></span>
+					<p id="trw_temp"></p>
+				</div>
+				<div class="forecast">
+					<span class="w_city_name">뉴욕</span>
+					<span id="nw_weather"></span>
+					<p id="nw_temp"></p>
+				</div>
+				</div>
+			</div>
 		</div>
 	</section>
 	<footer>
