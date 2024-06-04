@@ -53,6 +53,6 @@ function del_list(num){
 	list.remove();
 	
 	if($("input[name='place_id_src"+day+"']").length == 0){
-		 $("div[id='list_empty"+day+"']").show();
+		 $("div[id='list_empty"+day+"']").show(); 
 	 }
 }

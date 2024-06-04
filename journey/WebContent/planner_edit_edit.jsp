@@ -266,6 +266,15 @@ window.initMap = initMap;
 					}%>
 				<input type="hidden" name="place_name<%=a%>" value="empty<%=st_list %>" id = "place_name<%=a%>" />
 				<input type="hidden" name="place_ids<%=a %>" value="empty<%=id_list %>" id = "place_ids<%=a %>" />
+				<div id="list_empty<%=a%>" style="display:none;">
+						<div class="content_fdiv">
+							<div class="list_place">
+								<p class="list_place_empty" >일정이 비었습니다.</p>
+								<input type="hidden" name="place_name<%=a%>" value="empty" id = "place_name<%=a%>" />
+								<input type="hidden" name="place_ids<%=a %>" value="empty" id = "place_ids<%=a %>" />
+							</div>
+						</div>
+					</div>
 				</div>		
 						
 			<%	System.out.println("플랜editx23"+st_list);}
