@@ -135,7 +135,7 @@ String aaaa = datecnt+"";
 					<div class="plan_day">
 						<div class="plan_date">
 							<p class="day">Day<%=a %></p>
-							<p class="date">00.00(월)</p>
+							<p class="date"> </p>
 						</div>
 						<div class="plan_detail">
 						<div class="place_name_div">
@@ -147,6 +147,7 @@ String aaaa = datecnt+"";
 							String empty_pl = "";
 							String empty_ea = "";
 							for(String st : place_arr){
+								
 								for(Place pl : plac){
 									if(pl.getPlac_id().equals(st)){
 										out.println("#"+pl.getPlac_name()+" ");
@@ -474,7 +475,7 @@ String aaaa = datecnt+"";
 					<div class="plan_day">
 						<div class="plan_date">
 							<p class="day"><%=a %>일차</p>
-							<p class="date">00.00(월)</p>
+							<p class="date"> </p>
 						</div>
 						<div class="plan_detail">
 						<div class="place_name_div">
@@ -486,8 +487,10 @@ String aaaa = datecnt+"";
 							String empty_pl = "";
 							String empty_ea = "";
 							for(String st : place_arr){
+								System.out.println("hh"+st);
 								for(Place pl : plac){
 									if(pl.getPlac_id().equals(st)){
+										System.out.println(pl.getPlac_name());
 										out.println("#"+pl.getPlac_name()+" ");
 										empty_pl = "1";
 									}

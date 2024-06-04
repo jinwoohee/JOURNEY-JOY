@@ -122,7 +122,7 @@ List<Account> accList = (List<Account>)request.getAttribute("account");
 					<div class="plan_day">
 						<div class="plan_date">
 							<p class="day"><%=a %>일차</p>
-							<p class="date">00.00(월)</p>
+							<p class="date"> </p>
 						</div>
 						<div class="plan_detail">
 						<div class="place_name_div">

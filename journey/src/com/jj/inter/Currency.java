@@ -64,13 +64,15 @@ public class Currency implements JourneyInterface{
 		
 		for(int i=0; i<arr.size(); i++) {
 			 JSONObject row = (JSONObject) arr.get(i);
-			 
-			 Exchange ex = new Exchange();
-			 ex.setCur_nm((String) row.get("cur_nm"));
-			 ex.setCur_unit((String) row.get("cur_unit"));
-			 ex.setTts((String) row.get("tts"));
-			 
-			 exchangeList.add(ex);
+				 Exchange ex = new Exchange();
+				 String curr = (String) row.get("cur_unit");
+				 if(curr.equals("AUD") || curr.equals("CAD") || curr.equals("CNH") || curr.equals("EUR") || curr.equals("GBP") || curr.equals("HKD") || curr.equals("JPY") || curr.equals("SGD") || curr.equals("USD") || curr.equals("THB")) {
+					 ex.setCur_nm((String) row.get("cur_nm"));
+					 ex.setCur_unit((String) row.get("cur_unit"));
+					 ex.setTts((String) row.get("tts"));
+					 
+					 exchangeList.add(ex);
+				 }
 		}
 
 		request.setAttribute("exchangeList", exchangeList);

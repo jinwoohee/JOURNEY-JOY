@@ -87,6 +87,18 @@ window.onload = function() {
 	   $("#city_text").attr("value",$(this).text());
 	   $("#city_text_div").hide();
    });
+   
+   setInterval(fnSlide1, 3000);
+
+   function fnSlide1() {
+	   for(var i = 1 ; i <= 117 ; i++){
+		   var ma = -160*i ; 
+     $("#exchange_div1").animate({ "margin-left": ma+"px" }, 2500, function () {
+     
+     
+     	});
+	   }
+   };
 }
 
  function checking(id){ /*테마 체크 여부 */

@@ -86,7 +86,7 @@ $.ajax({
 				var date_re = date_mo.replaceAll("-","/");
 				var $date = date_re + " ";
 				var temp_o = resp.list[i].main.temp-273.15;
-				var $temp = Math.floor(temp_o)+" ";
+				var $temp = Math.floor(temp_o)+"°C ";
 				var weather = resp.list[i].weather[0].main;
 				var img_src ="";
 				if(weather == "Clear"){
@@ -125,7 +125,7 @@ $.ajax({
 				var date_t = resp.list[i].dt_txt;
 				var $date = date_t.substr(5,5)+" ";	
 				var temp_o = resp.list[i].main.temp-273.15;
-				var $temp = Math.floor(temp_o)+" ";
+				var $temp = Math.floor(temp_o)+"°C ";
 				var weather = resp.list[i].weather[0].main;
 				var img_src ="";
 				if(weather == "Clear"){
@@ -162,7 +162,7 @@ $.ajax({
 				var date_t = resp.list[i].dt_txt;
 				var $date = date_t.substr(5,5)+" ";	
 				var temp_o = resp.list[i].main.temp-273.15;
-				var $temp = Math.floor(temp_o)+" ";
+				var $temp = Math.floor(temp_o)+"°C ";
 				var weather = resp.list[i].weather[0].main;
 				var img_src ="";
 				if(weather == "Clear"){
@@ -200,7 +200,7 @@ $.ajax({
 				var date_t = resp.list[i].dt_txt;
 				var $date = date_t.substr(5,5)+" ";		
 				var temp_o = resp.list[i].main.temp-273.15;
-				var $temp = Math.floor(temp_o)+" ";
+				var $temp = Math.floor(temp_o)+"°C ";
 				var weather = resp.list[i].weather[0].main;
 				var img_src ="";
 				if(weather == "Clear"){
@@ -238,7 +238,7 @@ $.ajax({
 				var date_t = resp.list[i].dt_txt;
 				var $date = date_t.substr(5,5)+" ";	
 				var temp_o = resp.list[i].main.temp-273.15;
-				var $temp = Math.floor(temp_o)+" ";
+				var $temp = Math.floor(temp_o)+"°C ";
 				var weather = resp.list[i].weather[0].main;
 				var img_src ="";
 				if(weather == "Clear"){
@@ -276,7 +276,7 @@ $.ajax({
 				var date_t = resp.list[i].dt_txt;
 				var $date = date_t.substr(5,5)+" ";	
 				var temp_o = resp.list[i].main.temp-273.15;
-				var $temp = Math.floor(temp_o)+" ";
+				var $temp = Math.floor(temp_o)+"°C ";
 				var weather = resp.list[i].weather[0].main;
 				var img_src ="";
 				if(weather == "Clear"){
