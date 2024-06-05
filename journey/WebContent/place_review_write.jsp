@@ -114,7 +114,7 @@
 							eatList = selectPlace.select_eat(search);
 							
 							for(Place p : placeList){
-								if(place_id.equals(p.getPlac_id())){%>
+								if(place_id != null && place_id.equals(p.getPlac_id())){%>
 									<option value="<%=p.getPlac_no()%>" selected><%=p.getPlac_name() %></option>
 								<%}else{%>
 									<option value="<%=p.getPlac_no()%>"><%=p.getPlac_name() %></option>
@@ -122,7 +122,7 @@
 								
 							<%}
 							for(Eatery e : eatList){
-								if(place_id.equals(e.getEat_id())){%>
+								if(place_id != null && place_id.equals(e.getEat_id())){%>
 									<option value="<%=e.getEat_no() %>" selected><%=e.getEat_name() %></option>
 								<%}else{%>
 									<option value="<%=e.getEat_no() %>"><%=e.getEat_name() %></option>
