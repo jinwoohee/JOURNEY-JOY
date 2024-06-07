@@ -747,7 +747,7 @@ String aaaa = datecnt+"";
 				<%} %>
 				<input type="hidden" id="result_price" value="<%=rs %>">
 				<div id="acc_result_div">
-				<span id= "result_price_text"><%=f.format(rs) %></span>원
+				총 <span id= "result_price_text"><%=f.format(rs) %></span>원
 				</div>
 				<input type="submit" name="save_acc" value="저장">
 			
