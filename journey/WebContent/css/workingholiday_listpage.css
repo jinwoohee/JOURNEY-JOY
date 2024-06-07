@@ -1,6 +1,8 @@
 body {
     margin: 0px;
 	font-family: "Noto Sans KR", sans-serif;
+	background : url("https://logincdn.msauth.net/shared/5/images/2_bc3d32a696895f78c19d.svg");
+	background-size: cover;
 }
 
 .list {
