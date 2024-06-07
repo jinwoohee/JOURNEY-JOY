@@ -76,7 +76,7 @@
 					<input type="submit" value="로그인">
 				</form>
 				<div id="search">
-					<div>
+					<div> 
 						<p id='findID'>아이디찾기</p>
 						<p>ㅣ</p>
 						<p id='findPW'>비밀번호찾기</p>
@@ -90,19 +90,19 @@
 						<%
 						//네이버
 						String clientId = "lEYwWdovBT_X9ayS_3P9";
-					    String redirectURI = "http://localhost:8091/journey/oauth.jj?page=naverLogin";
+					    String redirectURI = "http://3.137.166.109/journey/oauth.jj?page=naverLogin";
 					    String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
 					    SecureRandom random = new SecureRandom();
 					    String state = new BigInteger(130, random).toString();
 					    apiURL += "&client_id=" + clientId;
 					    apiURL += "&redirect_uri=" + redirectURI;
 					    apiURL += "&state=" + state;
-					    session.setAttribute("state", state);
+					    session.setAttribute("state", state); 
 						
 						
 						//카카오
 						String client_id = "97d3d4fdd304333d14ac189994d057ea";
-						String redirect_uri = "http://localhost:8091/journey/oauth.jj?page=kakaoLogin";
+						String redirect_uri = "http://3.137.166.109/journey/oauth.jj?page=kakaoLogin";
 						String url = "https://kauth.kakao.com/oauth/authorize?client_id=" + client_id + "&redirect_uri=" + redirect_uri + "&response_type=code";
 						%>
 						<a href="<%= apiURL %>"><img src="img/icon/naver.png"/></a>
